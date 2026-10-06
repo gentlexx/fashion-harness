@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "kind": "fictional-narrative-walkthrough",
+    "importable": false,
+    "realCustomer": false,
+    "realMarketEvidence": false,
+    "note": "Simplified public narrative; code definitions remain authoritative."
+  },
+  "project": {
+    "projectId": "demo-project-transitional-utility",
+    "title": "Transitional Utility Jacket",
+    "brief": {
+      "market": "United States",
+      "season": "Fall 2026",
+      "audience": "Women seeking a lightweight commuting layer",
+      "category": "Utility jacket",
+      "constraints": [
+        "Three pairwise-differentiated concepts",
+        "Human review before deliverable",
+        "No claim of real sales prediction"
+      ]
+    }
+  },
+  "research": {
+    "ResearchTask": {
+      "id": "rt-demo-001",
+      "question": "Which fictional design signals could support three distinct transitional jacket directions?"
+    },
+    "Source": [
+      {
+        "id": "src-demo-editorial",
+        "url": "https://example.com/fashion/editorial",
+        "status": "fictional"
+      },
+      {
+        "id": "src-demo-catalog",
+        "url": "https://example.com/fashion/catalog",
+        "status": "fictional"
+      }
+    ],
+    "Sample": [
+      {
+        "id": "sample-demo-001",
+        "sourceId": "src-demo-editorial",
+        "description": "Fictional sample describing soft utility layering."
+      },
+      {
+        "id": "sample-demo-002",
+        "sourceId": "src-demo-catalog",
+        "description": "Fictional sample describing modular commuting details."
+      }
+    ],
+    "Evidence": [
+      {
+        "id": "evidence-demo-001",
+        "sampleId": "sample-demo-001",
+        "claim": "Soft utility styling may support a transitional layer concept.",
+        "reviewStatus": "pending_review"
+      },
+      {
+        "id": "evidence-demo-002",
+        "sampleId": "sample-demo-002",
+        "claim": "Modular details may separate a longline direction from a cropped direction.",
+        "reviewStatus": "pending_review"
+      }
+    ]
+  },
+  "analysis": {
+    "AnalysisRun": {
+      "id": "analysis-demo-001",
+      "inputEvidenceIds": [
+        "evidence-demo-001",
+        "evidence-demo-002"
+      ],
+      "status": "illustrative"
+    },
+    "TrendCluster": {
+      "id": "cluster-demo-adaptive-utility",
+      "label": "Adaptive soft utility",
+      "confidence": "not_measured"
+    },
+    "DesignOpportunity": {
+      "id": "opportunity-demo-001",
+      "revision": 1,
+      "title": "Transitional utility with clearly separated silhouettes",
+      "decision": "selected_for_fictional_walkthrough"
+    }
+  },
+  "design": {
+    "DesignOpportunityBrief": {
+      "opportunityId": "opportunity-demo-001",
+      "opportunityRevision": 1,
+      "requirement": "Create exactly three pairwise-differentiated concepts."
+    },
+    "ConceptSet": {
+      "id": "concept-set-demo-001",
+      "status": "review_ready",
+      "concepts": [
+        {
+          "id": "concept-demo-cropped-transit",
+          "name": "Cropped Transit",
+          "difference": "Cropped structured silhouette for city commuting."
+        },
+        {
+          "id": "concept-demo-soft-field",
+          "name": "Soft Field Layer",
+          "difference": "Relaxed soft construction for everyday layering."
+        },
+        {
+          "id": "concept-demo-modular-longline",
+          "name": "Modular Longline",
+          "difference": "Long silhouette with modular weather-adaptive details."
+        }
+      ]
+    },
+    "ReviewRound": [
+      {
+        "round": 1,
+        "decision": "changes_requested",
+        "fictionalComment": "Clarify how Soft Field Layer differs in closure and volume."
+      },
+      {
+        "round": 2,
+        "decision": "approved",
+        "fictionalComment": "Differences are now explicit for demonstration."
+      }
+    ],
+    "ApprovalInvalidation": {
+      "demonstrated": true,
+      "reason": "The first review cannot approve content changed after that review."
+    },
+    "DesignDeliverable": {
+      "id": "deliverable-demo-001",
+      "basedOnValidApproval": true,
+      "publicPortfolioMeansAutomaticPublish": false,
+      "snapshotHash": "NOT_COMPUTED_IN_NARRATIVE"
+    }
+  },
+  "feedback": {
+    "DesignerFeedback": {
+      "kind": "fictional",
+      "summary": "The three directions are distinguishable for walkthrough purposes."
+    },
+    "OutcomeAvailability": "not_yet_observed",
+    "OutcomeMetricObservation": []
+  },
+  "evaluation": {
+    "EvaluationRun": {
+      "status": "illustrative",
+      "verdict": "partial"
+    },
+    "RuleResult": [
+      {
+        "rule": "exactly_three_concepts",
+        "result": "pass"
+      },
+      {
+        "rule": "real_market_outcome_available",
+        "result": "not_applicable"
+      }
+    ],
+    "ImprovementItem": [
+      {
+        "title": "Validate cross-object ownership before relying on analysis references",
+        "autoApplied": false
+      }
+    ]
+  }
+}
