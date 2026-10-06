@@ -32,9 +32,9 @@ It also includes:
 - frozen deliverable snapshots with content hashes and audience filtering;
 - a read-only Fashion Agent context that binds a Session to one Project and exposes no Fashion write tool;
 - deterministic evaluation rules and an improvement queue that still requires human triage;
-- Fashion-profile configuration that disables the upstream welcome/onboarding prompts; the final no-key browser path remains pending T-06, and live model actions remain provider-dependent.
+- Fashion-profile configuration that disables the generic upstream welcome flow; the first-run API-key dialog remains visible but can be dismissed with **Configure later**, while live model actions remain provider-dependent.
 
-The candidate has passed T-04 focused checks (7 test files / 60 tests plus package, path, Cordis config, and client-i18n gates). A clean full build, full Fashion suite, fresh-home startup, and browser evidence are intentionally marked **pending** until the final application SHA is frozen.
+On the frozen application commit `c1a8010b72764876b17744776d674fefc35d4ea9`, T-06 completed an offline frozen-lockfile install, a full build (252 client artifacts), typecheck, 46 Fashion-focused test files / 284 tests, fresh-`DSH_HOME` startup, HTTP 200 page access, manual browser-flow inspection, and six evidence screenshots. The corpus-wide translation-pairing and Markdown-link gates still report retained upstream documentation links to excluded `.agents` / `.github` content; this is disclosed documentation debt rather than a Fashion runtime pass.
 
 ## Why this is a Harness, not a chat demo
 
@@ -64,7 +64,7 @@ The web server uses `http://127.0.0.1:3080` by default. Use an isolated `DSH_HOM
 
 The deterministic Fashion workbench is intended to be browsable without an API key. Live Agent/model actions require a provider configured through the Models settings page or the launching environment. Never commit credentials; [`.env.example`](.env.example) contains names only.
 
-> These commands are the intended public workflow. Final clean-build and fresh-home browser results will be recorded in [Validation and Evidence](docs/fashion/validation-and-evidence.md) after T-06; this README does not claim they have already passed on the final SHA.
+> T-06 verified this workflow on the frozen application commit using an offline frozen-lockfile install and a fresh `DSH_HOME`. Exact results and disclosed failures are recorded in [Validation and Evidence](docs/fashion/validation-and-evidence.md).
 
 ## Design decisions worth inspecting
 
@@ -92,7 +92,7 @@ The presence of TypeScript, React, Cordis, storage, testing, or other technologi
 - The R0 source set is small, dated, and non-representative; it is not live market data or sales prediction.
 - No complete Fashion Dataset, production Ontology, fine-tuned fashion model, CAD/Tech Pack pipeline, or proven commercial outcome is claimed.
 - Real designer usability and value remain a planned R1 study; no satisfaction or efficiency result is claimed.
-- Final full build, clean startup, browser flow, and screenshots remain pending T-06.
+- Corpus-wide translation-pairing and Markdown-link checks still fail on retained upstream documentation links to intentionally excluded internal paths; the new Fashion public materials do not contribute those failures.
 
 ## Documentation
 

@@ -24,7 +24,7 @@ The following boundaries must remain public:
 2. **There is no complete Brief revision interface**: the current interface does not cover every field, revision difference, and complete revision experience;
 3. **Improvement candidates are not strongly consistent**: an `ImprovementItem` is a suggestion, not an automatic fix or a strongly consistent projection of every source object;
 4. **Evaluation depends on a Git checkout**: some evaluation evidence uses repository and Git context and should not be described as portable to every deployment;
-5. **Final verification is incomplete**: full build and no-key browser flow remain `Pending T-06`.
+5. **Repository-wide documentation debt remains**: T-06 passed the application build, Fashion-focused tests, startup, and browser flow, but corpus-wide translation-pairing and Markdown-link checks still report retained upstream links to excluded internal paths.
 
 ## 4. Privacy and credential boundary
 

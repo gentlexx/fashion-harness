@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write docs/fashion/roadmap-and-boundaries.md
-roadmap-and-boundaries.md: ca8a64094d8c9c3aae2473ab40f78cd51def7da8
-roadmap-and-boundaries.zh.md: e22031dcbf21d7e4acee202e9b4c1ef8a8cf5dca
+roadmap-and-boundaries.md: 2c6a79962f83d4e994dbae885d30f34720a9a940
+roadmap-and-boundaries.zh.md: 83f993cd908da7cfd47d63c32ffe96670fb23338

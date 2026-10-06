@@ -48,7 +48,7 @@ The feedback layer uses `OutcomeAvailability` to distinguish “not yet observed
 | Read-only project query tool | Implemented | The tool accepts only a section; the Host supplies projectId |
 | Three-direction, review, and delivery rules | Implemented | Domain invariants and focused tests exist |
 | Publication-focused checks | T-04 verified | 60 focused tests and related gates passed |
-| Final full application verification | Pending T-06 | Final build and browser loop are not yet claimed |
+| Final application verification | T-06 verified with disclosed limitations | Build, typecheck, 46 focused files / 284 tests, fresh-home startup, browser flow, and screenshots passed; upstream documentation-link debt remains disclosed |
 | Real designer feedback | Not claimed | No real-user conclusion exists yet |
 
 ## 5. Known product gaps
@@ -57,6 +57,6 @@ The feedback layer uses `OutcomeAvailability` to distinguish “not yet observed
 - there is no complete Brief revision interface for every field and revision;
 - `ImprovementItem` candidates are not strongly consistent and do not automatically modify domain state;
 - Evaluation depends on a Git checkout;
-- final full build and no-key browser verification remain pending T-06.
+- corpus-wide translation-pairing and Markdown-link checks still fail on retained upstream links to excluded internal paths; the Fashion application checks and browser flow passed T-06.
 
 These gaps are retained as explicit boundaries rather than presented as completed capability.

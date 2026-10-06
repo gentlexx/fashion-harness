@@ -48,7 +48,7 @@ Fashion Harness 将问题定义为：建立一个可追溯、可人工审核、�
 | 只读项目查询工具 | Implemented | 工具只接受 section，projectId 由宿主绑定 |
 | 三方向、审核、交付规则 | Implemented | 有对应领域不变量与定向测试 |
 | 公开化相关定向检查 | T-04 verified | 60 个定向测试及相关校验通过 |
-| 最终应用全量验证 | Pending T-06 | 尚不能声明最终构建和浏览器闭环通过 |
+| 最终应用验证 | T-06 verified with disclosed limitations | 构建、typecheck、46 个定向文件／284 个测试、全新运行目录启动、浏览器主链和截图通过；上游文档链接债务继续披露 |
 | 真实设计师使用反馈 | Not claimed | 尚无真实用户研究结论 |
 
 ## 5. 已知产品缺口
@@ -57,6 +57,6 @@ Fashion Harness 将问题定义为：建立一个可追溯、可人工审核、�
 - 目前没有覆盖所有字段和版本的完整 Brief 修订界面；
 - `ImprovementItem` 候选不保证强一致，也不会自动修改业务对象；
 - Evaluation 依赖 Git 检出环境；
-- 最终全量构建与无密钥浏览器流程尚待 T-06 验证。
+- 全仓 translation-pairing 与 Markdown 链接检查仍因保留的上游文档指向候选包排除的内部路径而失败；Fashion 应用检查和浏览器主链已通过 T-06。
 
 这些缺口被保留为明确边界，而不是包装成已完成能力。

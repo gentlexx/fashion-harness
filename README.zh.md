@@ -32,9 +32,9 @@ Project
 - 带内容哈希和受众过滤的冻结交付快照；
 - 将一个 Session 绑定到一个 Project、且不提供 Fashion 写工具的只读 Agent 上下文；
 - 确定性评测规则，以及仍需人工分诊的 Improvement Queue；
-- Fashion profile 已配置为关闭上游欢迎／引导弹窗；最终无 Key 浏览器路径仍待 T-06 验证，实时模型动作仍依赖用户配置 Provider。
+- Fashion profile 已配置为关闭上游通用欢迎流程；首次启动仍会出现 API Key 引导，但可用“稍后配置”关闭，实时模型动作仍依赖用户配置 Provider。
 
-当前候选已经通过 T-04 定向检查：7 个测试文件／60 个测试，以及 package、路径、Cordis config 和客户端国际化门禁。完整干净构建、完整 Fashion 测试、新运行目录启动和浏览器证据必须等最终应用 SHA 冻结后再记录，因此当前明确标记为**待验证**。
+T-06 已在冻结应用提交 `c1a8010b72764876b17744776d674fefc35d4ea9` 上完成离线冻结锁文件安装、全量构建（252 个客户端产物）、typecheck、46 个 Fashion 定向测试文件／284 个测试、全新 `DSH_HOME` 启动、页面 HTTP 200、人工浏览器主链检查和六张证据截图。全仓 translation-pairing 与 Markdown 链接门禁仍会报告：部分保留的上游文档链接指向候选包主动排除的 `.agents`／`.github` 内容；这是已披露的文档债务，不应被写成 Fashion 运行失败或全仓通过。
 
 ## 为什么它是 Harness，而不是聊天 Demo
 
@@ -65,7 +65,7 @@ Web 服务默认使用 `http://127.0.0.1:3080`。评估仓库时建议使用隔�
 
 确定性的 Fashion 工作台设计为无需 API Key 即可浏览。实时 Agent／模型动作需要通过 Models 设置页或启动环境配置 Provider。不要提交凭据；[`.env.example`](.env.example) 只包含变量名。
 
-> 以上是预期公开运行方式。T-06 完成前，[验证与证据](docs/fashion/validation-and-evidence.zh.md)不会声称这些命令已经在最终 SHA 上完整通过。
+> T-06 已用离线冻结锁文件安装和全新 `DSH_HOME` 在冻结应用提交上验证这条运行路径。准确结果与已披露失败见[验证与证据](docs/fashion/validation-and-evidence.zh.md)。
 
 ## 值得检查的设计决策
 
@@ -93,7 +93,7 @@ Cursor 根据冻结规格承担主要代码实现和测试编写。Codex 协助�
 - R0 数据量小、带日期且不具代表性，不是实时市场数据或销量预测。
 - 不声称已经完成完整 Fashion Dataset、生产级 Ontology、服装垂类模型、CAD／Tech Pack 管线或商业效果。
 - 真实设计师可用性和价值属于计划中的 R1；当前没有满意度或效率结果。
-- 最终全量构建、干净启动、浏览器主流程和截图仍待 T-06。
+- 全仓 translation-pairing 与 Markdown 链接检查仍因保留的上游文档指向已排除内部路径而失败；新增 Fashion 公开材料没有产生这些失败。
 
 ## 文档导航
 

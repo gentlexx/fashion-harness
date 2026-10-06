@@ -2,26 +2,32 @@
 
 English | [中文](screenshot-manifest.zh.md)
 
-Status: `PENDING_T06`
+Status: `T06_CAPTURED_AND_VERIFIED`
 
-Before T-06, this directory contains no placeholder image, old screenshot, or simulated interface. Every screenshot must come from the final application commit and record the application SHA, capture date, runtime configuration, and scenario.
+These screenshots were captured from the locally frozen application commit during T-06 independent verification. They are evidence of visible product states, not claims of live market data, commercial outcomes, or a passing full-repository documentation suite.
 
-| Reserved filename | Planned scene | Current status |
-| --- | --- | --- |
-| `01-fashion-home.png` | Fashion profile home and independent identity | Pending T-06 |
-| `02-project-brief.png` | Project and Brief entry | Pending T-06 |
-| `03-research-evidence.png` | Traceable Source, Sample, and Evidence relationship | Pending T-06 |
-| `04-analysis-opportunity.png` | Trend cluster and design opportunity | Pending T-06 |
-| `05-three-concepts-review.png` | Three directions and human review | Pending T-06 |
-| `06-deliverable-evaluation.png` | Deliverable snapshot, feedback, or evaluation view | Pending T-06 |
+## Shared capture metadata
 
-## Required metadata for every screenshot
+- Capture date: `2026-10-06`
+- Application commit: `c1a8010b72764876b17744776d674fefc35d4ea9`
+- Screenshot evidence commit: `0a24188df7953fbc61bf21e001349b63bdd3d00e`
+- Startup: `pnpm dsh --profile fashion` with a fresh local `DSH_HOME`
+- API key: none entered, read, or displayed; the first-run dialog was dismissed with **Configure later**
+- Runtime check: local page returned HTTP 200
+- Automated checks on the application commit: build passed with 252 client artifacts; typecheck passed; 46 Fashion-focused test files / 284 tests passed
+- Browser scope: the public case and main Research → Analysis → Design → Review → Deliverable/Evaluation path were inspected manually
 
-- application commit SHA: `PENDING_T06`;
-- evidence commit SHA: fill after the screenshot commit;
-- Fashion profile startup method;
-- whether an API key was used, without revealing its value;
-- scene description and visible limitations;
-- corresponding automated or human validation step.
+## Evidence index
 
-A screenshot proves only the visible state. It does not by itself prove live data, commercial effect, or a passing full-repository test suite.
+| File | Visible scene and boundary | Dimensions | SHA-256 |
+| --- | --- | --- | --- |
+| `01-fashion-home.png` | Fashion profile home, independent Fashion Harness identity, public case entry, and local project entry. | 1330×1292 | `5c06ad7cf79cbc3470947de333a49cf45474d9a7adb48b16acb8a7a86ec965fa` |
+| `02-project-brief.png` | Local project overview and workflow stages. This also exposes the current boundary: project creation accepts a name, but there is no complete Brief revision interface. | 1330×1292 | `775394d64af00325ea6cab0d3f6e2c3923d5728630d10f7de047a442bd4fee5d` |
+| `03-research-evidence.png` | Research task with Source, Sample, Evidence, review status, and traceability. Linked-source existence and attribution are not fully reverified for public use. | 1330×1292 | `d03accb2285d2ef4ab8382cecb51393702174a21c2be88c000033d83a7e6b2e0` |
+| `04-analysis-opportunity.png` | Structured market items, signals, trend cluster, and design opportunity. The content is a fixed demonstration case, not live market intelligence. | 1330×1292 | `1faec5128ac4783b8821b862e54b59ea5402095dfa666b2d89ad5ad638fc0b58` |
+| `05-three-concepts-review.png` | Three design directions, human review, and selected direction. Improvement candidates do not guarantee strong consistency across every derived record. | 1330×1292 | `0094a67b3bface683e1d55a34c2911155d2aa3aa4e027f40c1e9f2a720e3469a` |
+| `06-deliverable-evaluation.png` | Deliverable and fixed evaluation view. It is not real designer validation or commercial evidence; evaluation verification depends on a Git checkout. | 1330×1292 | `2071c3769ba1fd59a83ca6e737d93ee16c65e3ac4cf0ca322da5e51f46c27c8a` |
+
+## Interpretation boundary
+
+The screenshots validate what was visible in one local run of the stated application commit. They do not independently validate source rights, factual market claims, model quality, long-term persistence, production security, designer adoption, or business value. The complete T-06 result includes disclosed upstream-document link debt outside the new public materials.

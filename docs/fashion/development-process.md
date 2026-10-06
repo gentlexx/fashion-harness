@@ -30,7 +30,7 @@ This is not presented as a project in which every line was independently handwri
 - compare AI-generated changes against the task list and code diff;
 - separate the implementation role from the audit role;
 - cite test counts only when they were actually run and label the stage;
-- mark unrun full checks as `Pending T-06`;
+- mark unrun checks as pending, then replace the label only with evidence from the corresponding frozen commit;
 - do not convert the presence of a technology into a claim that the owner has mastered it;
 - do not present walkthrough data, seed data, or planning documents as real customer outcomes.
 
@@ -38,7 +38,7 @@ This is not presented as a project in which every line was independently handwri
 
 T-04 completed the focused engineering adjustments needed for publication: Fashion package naming, brand separation, configurable onboarding, build references, R0 uncertainty handling, and related checks. T-05 organizes those facts into material that a recruiter can inspect.
 
-Full build, complete testing, browser flow, screenshot evidence, and the final application SHA belong to T-06. Until T-06 is complete, this repository does not claim final public acceptance.
+T-06 froze the application SHA and completed the full build, typecheck, focused Fashion suite, fresh-home startup, browser-flow inspection, and screenshot capture. The result is recorded as verified with disclosed limitations because corpus-wide documentation gates still expose retained upstream-link debt.
 
 ## 5. Reusable method
 

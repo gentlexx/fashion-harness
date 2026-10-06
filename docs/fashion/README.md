@@ -6,7 +6,7 @@ This directory contains the public product, system, and engineering evidence for
 
 - **Implemented**: present in the candidate code;
 - **T-04 verified**: covered by a focused T-04 test or static check;
-- **Pending T-06**: requires final full build, test, and browser verification on the application commit;
+- **T-06 verified with disclosed limitations**: final build, focused Fashion tests, startup, browser flow, and screenshots passed on the application commit, while named documentation debt remains public;
 - **Planned**: designed for a later phase but not implemented.
 
 ## Suggested reading path
@@ -19,10 +19,10 @@ This directory contains the public product, system, and engineering evidence for
 6. [Learning and iteration](learning-and-iteration.md): how project problems map back to a learning path;
 7. [Roadmap and boundaries](roadmap-and-boundaries.md): how the current slice relates to the long-term loop;
 8. [Fictional walkthrough](../../examples/fashion-fictional-walkthrough/README.md): an end-to-end explanation without real client data;
-9. [Screenshot evidence manifest](assets/screenshots/screenshot-manifest.md): final screenshots may be added only after T-06.
+9. [Screenshot evidence manifest](assets/screenshots/screenshot-manifest.md): six screenshots captured from the frozen application commit, with hashes and scenario boundaries.
 
 ## Current public conclusion
 
-Fashion Harness implements an engineering slice of a fashion-research and design-decision loop: a Brief and traceable research objects lead to design opportunities, three concept directions, human review, delivery, and evaluation records. T-04 completed the focused checks tied directly to publication adjustments. Final full build, complete Fashion tests, and no-key browser verification remain **Pending T-06**.
+Fashion Harness implements an engineering slice of a fashion-research and design-decision loop: a Brief and traceable research objects lead to design opportunities, three concept directions, human review, delivery, and evaluation records. T-06 verified the frozen application commit through build, typecheck, 46 Fashion-focused test files / 284 tests, fresh-home startup, HTTP 200 access, manual browser inspection, and six screenshots. Retained upstream documentation links still cause the corpus-wide translation-pairing and Markdown-link gates to fail, and that debt is disclosed rather than hidden.
 
 This repository does not claim large-scale automated collection, live market prediction, a complete Fashion Dataset/Ontology, vertical-model training, CAD/Tech Pack production, or proven commercial outcomes.

@@ -41,7 +41,7 @@ This slice tests product structure, domain rules, Agent context, and delivery ev
 | --- | --- | --- |
 | Current engineering slice | Domain objects, rules, controllers, Fashion Shell, and Harness read access | Implemented |
 | Publication-focused changes | Brand separation, naming, onboarding config, build reference, and seed uncertainty | T-04 verified |
-| Final candidate acceptance | Full build, tests, startup, browser flow, screenshots, and application SHA | Pending T-06 |
+| Final candidate acceptance | Full build, Fashion-focused tests, startup, browser flow, screenshots, and application SHA | T-06 verified with disclosed limitations |
 | Designer study | Observe real tasks, record friction and feedback, and create iteration evidence | Planned |
 | Research integrity | Strengthen cross-project ownership, reference existence, rights, and provenance checks | Planned |
 | Workflow expansion | Complete Brief revision, controlled write tools, multi-agent roles, and recovery | Planned |
@@ -61,11 +61,10 @@ This slice tests product structure, domain rules, Agent context, and delivery ev
 
 ## 5. Near-term priorities
 
-1. complete T-06 candidate validation and repair real blockers;
-2. capture screenshots and runtime evidence only from the final application commit;
-3. establish a repeatable designer-study script and feedback template;
-4. prioritize reference integrity, Brief revision, and evaluation portability;
-5. discuss controlled write tools and multi-agent collaboration only after those foundations;
-6. map each issue back to the personal learning plan and next acceptance criteria.
+1. resolve or deliberately scope the retained upstream documentation-link debt before publication;
+2. establish a repeatable designer-study script and feedback template;
+3. prioritize reference integrity, Brief revision, and evaluation portability;
+4. discuss controlled write tools and multi-agent collaboration only after those foundations;
+5. map each issue back to the personal learning plan and next acceptance criteria.
 
 The roadmap changes with evidence; a planned capability is not an implemented one.

@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write docs/fashion/assets/screenshots/screenshot-manifest.md
-screenshot-manifest.md: be6ac4ffe2f18b2468cd6ecf10de8ba994ef9987
-screenshot-manifest.zh.md: dbd515abde413f850fa6f85e6b981e01c6c26d81
+screenshot-manifest.md: 1b1145cb657185874eeb939ff8ff999e9bf435a7
+screenshot-manifest.zh.md: 7462bba655652a15df3ce8cea578d2d27dc8bcfd

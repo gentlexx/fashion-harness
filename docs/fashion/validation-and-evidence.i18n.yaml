@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write docs/fashion/validation-and-evidence.md
-validation-and-evidence.md: 1d21c02208835e839f4be52848c5ef86df3153ab
-validation-and-evidence.zh.md: fed285a5cd0f529f3d14c022b78a7d17ad4da3c7
+validation-and-evidence.md: 270dbd8e0dd8b14112faee17c26012f36669e691
+validation-and-evidence.zh.md: ffec0be3cd6eea07aebea177f8c0c4ad49d1d363

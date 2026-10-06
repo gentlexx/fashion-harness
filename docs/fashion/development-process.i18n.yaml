@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write docs/fashion/development-process.md
-development-process.md: 5a71cf0ec01bd1d8ee7aab2fbb429d96599147b3
-development-process.zh.md: be4da68dffa0fe124f1dbabc37ef712beb19f5c8
+development-process.md: 91d4419e8b60613d6def07efb631e1a5f0e253f9
+development-process.zh.md: 1cc727779f37deb67b9d4ffcfad3c98852027f5a
