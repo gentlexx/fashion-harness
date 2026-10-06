@@ -13,13 +13,14 @@
 
 1. [产品案例](product-case-study.zh.md)：问题、用户、范围和产品决策；
 2. [系统架构](architecture.zh.md)：领域包、控制器、Harness 与证据链；
-3. [开发过程](development-process.zh.md)：从规划到实现、审计和交付的工作方式；
-4. [验证与证据](validation-and-evidence.zh.md)：已经验证什么、还缺什么；
-5. [数据来源与限制](data-provenance-and-limitations.zh.md)：可追溯性、合规和已知边界；
-6. [学习与迭代](learning-and-iteration.zh.md)：如何把项目问题映射回学习路线；
-7. [路线图与能力边界](roadmap-and-boundaries.zh.md)：当前切片与长期闭环的关系；
-8. [虚构演练](../../examples/fashion-fictional-walkthrough/README.zh.md)：不用真实客户数据说明一次端到端流程；
-9. [截图证据清单](assets/screenshots/screenshot-manifest.zh.md)：包含从冻结应用提交采集的六张截图、哈希和场景边界。
+3. [贡献与归属地图](contribution-and-ownership.zh.md)：项目所有者决策、AI 辅助实现、上游代码和版本证据；
+4. [开发过程](development-process.zh.md)：从规划到实现、审计和交付的工作方式；
+5. [验证与证据](validation-and-evidence.zh.md)：已经验证什么、还缺什么；
+6. [数据来源与限制](data-provenance-and-limitations.zh.md)：可追溯性、合规和已知边界；
+7. [学习与迭代](learning-and-iteration.zh.md)：如何把项目问题映射回学习路线；
+8. [路线图与能力边界](roadmap-and-boundaries.zh.md)：当前切片与长期闭环的关系；
+9. [虚构演练](../../examples/fashion-fictional-walkthrough/README.zh.md)：不用真实客户数据说明一次端到端流程；
+10. [截图证据清单](assets/screenshots/screenshot-manifest.zh.md)：包含从冻结应用提交采集的六张截图、哈希和场景边界。
 
 ## 当前公开结论
 

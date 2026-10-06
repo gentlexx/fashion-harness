@@ -13,13 +13,14 @@ This directory contains the public product, system, and engineering evidence for
 
 1. [Product case study](product-case-study.md): problem, users, scope, and product decisions;
 2. [Architecture](architecture.md): domain packages, controllers, Harness, and evidence chain;
-3. [Development process](development-process.md): the workflow from planning to implementation, audit, and delivery;
-4. [Validation and evidence](validation-and-evidence.md): what has been verified and what remains open;
-5. [Data provenance and limitations](data-provenance-and-limitations.md): traceability, compliance, and known boundaries;
-6. [Learning and iteration](learning-and-iteration.md): how project problems map back to a learning path;
-7. [Roadmap and boundaries](roadmap-and-boundaries.md): how the current slice relates to the long-term loop;
-8. [Fictional walkthrough](../../examples/fashion-fictional-walkthrough/README.md): an end-to-end explanation without real client data;
-9. [Screenshot evidence manifest](assets/screenshots/screenshot-manifest.md): six screenshots captured from the frozen application commit, with hashes and scenario boundaries.
+3. [Contribution and ownership map](contribution-and-ownership.md): project-owner decisions, AI-assisted implementation, upstream code, and version evidence;
+4. [Development process](development-process.md): the workflow from planning to implementation, audit, and delivery;
+5. [Validation and evidence](validation-and-evidence.md): what has been verified and what remains open;
+6. [Data provenance and limitations](data-provenance-and-limitations.md): traceability, compliance, and known boundaries;
+7. [Learning and iteration](learning-and-iteration.md): how project problems map back to a learning path;
+8. [Roadmap and boundaries](roadmap-and-boundaries.md): how the current slice relates to the long-term loop;
+9. [Fictional walkthrough](../../examples/fashion-fictional-walkthrough/README.md): an end-to-end explanation without real client data;
+10. [Screenshot evidence manifest](assets/screenshots/screenshot-manifest.md): six screenshots captured from the frozen application commit, with hashes and scenario boundaries.
 
 ## Current public conclusion
 

@@ -21,7 +21,7 @@ Fashion Harness turns a small, attributable research set into reviewable design 
 | Time | Inspect | What it demonstrates |
 | --- | --- | --- |
 | First 15 seconds | This page, the screenshot, and [What this version implements](#what-this-version-implements) | The product problem, current workflow, and visible result |
-| By 45 seconds | [Product case](docs/fashion/product-case-study.md) and [architecture / ownership map](docs/fashion/architecture.md) | Requirement judgment, domain modeling, Harness boundaries, and upstream-versus-Fashion ownership |
+| By 45 seconds | [Product case](docs/fashion/product-case-study.md), [architecture](docs/fashion/architecture.md), and [contribution / ownership map](docs/fashion/contribution-and-ownership.md) | Requirement judgment, domain modeling, Harness boundaries, and upstream-versus-Fashion ownership |
 | By 70 seconds | [Development process](docs/fashion/development-process.md) | How product decisions, Cursor implementation, Codex audit, and human acceptance were separated |
 | By 90 seconds | [Validation evidence](docs/fashion/validation-and-evidence.md), [screenshot manifest](docs/fashion/assets/screenshots/screenshot-manifest.md), and [known limits](#known-limits) | Build/test/runtime evidence, honest capability boundaries, and what remains to be improved |
 
@@ -122,6 +122,7 @@ The presence of TypeScript, React, Cordis, storage, testing, or other technologi
 - [Fashion documentation index](docs/fashion/README.md)
 - [Product case study](docs/fashion/product-case-study.md)
 - [Architecture and ownership map](docs/fashion/architecture.md)
+- [Contribution and ownership map](docs/fashion/contribution-and-ownership.md)
 - [Development process and AI collaboration](docs/fashion/development-process.md)
 - [Validation and evidence](docs/fashion/validation-and-evidence.md)
 - [Data provenance and limitations](docs/fashion/data-provenance-and-limitations.md)

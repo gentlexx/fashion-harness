@@ -11,3 +11,39 @@
 # Pairing records are generated from the three confirmed owner-blob pairs.
 # The worktree-local installer registers the fail-closed driver command.
 *.i18n.yaml merge=dsh-translation-pairing
+
+# GitHub Linguist presentation boundary. The repository retains a frozen
+# upstream monorepo so the Fashion profile can be built and verified, but the
+# language bar should describe the Fashion-specific implementation rather than
+# 7,000+ unchanged upstream files. These attributes affect GitHub statistics;
+# they do not change licensing, history, runtime behavior, or authorship.
+apps/** linguist-vendored
+benchmarks/** linguist-vendored
+native/** linguist-vendored
+packages/** linguist-vendored
+patches/** linguist-vendored
+python/** linguist-vendored
+scripts/** linguist-vendored
+snapshots/** linguist-vendored
+vendor/** linguist-vendored
+website/** linguist-vendored
+
+# Fashion-owned packages and assets remain visible in language statistics.
+packages/fashion/** -linguist-vendored
+packages/api/fashion-*/** -linguist-vendored
+packages/client/ui-fashion-shell/** -linguist-vendored
+packages/bundle/fashion-app/** -linguist-vendored
+apps/web/public/fashion-* -linguist-vendored
+
+# Targeted integration changes to the upstream host remain visible too.
+packages/boot/app-boot/src/profile.ts -linguist-vendored
+packages/client/ui-conversation/src/client/apply.ts -linguist-vendored
+packages/client/ui-conversation/src/client/contract/slots.ts -linguist-vendored
+packages/client/ui-conversation/src/client/skeleton/EmptyHero.tsx -linguist-vendored
+packages/client/ui-conversation/tests/skeleton.client.spec.tsx -linguist-vendored
+packages/client/ui-settings-models/src/client/index.ts -linguist-vendored
+packages/client/ui-settings-models/tests/apply.client.spec.ts -linguist-vendored
+packages/host/frontend-static/src/index.ts -linguist-vendored
+packages/host/frontend-static/tests/frontend-static.spec.ts -linguist-vendored
+scripts/verify-package-readme-model-experience.ts -linguist-vendored
+scripts/verify-subsystem-pages.ts -linguist-vendored

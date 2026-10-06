@@ -21,7 +21,7 @@ Fashion Harness 把小规模、可归属的研究资料组织为可审核的设�
 | 时间 | 查看内容 | 能力证据 |
 | --- | --- | --- |
 | 前 15 秒 | 本页、首页截图和[当前版本实现了什么](#what-this-version-implements) | 产品问题、当前闭环和可见结果 |
-| 45 秒内 | [产品案例](docs/fashion/product-case-study.zh.md)与[架构／归属图](docs/fashion/architecture.zh.md) | 需求判断、领域建模、Harness 边界，以及上游与 Fashion 归属 |
+| 45 秒内 | [产品案例](docs/fashion/product-case-study.zh.md)、[架构说明](docs/fashion/architecture.zh.md)与[贡献／归属地图](docs/fashion/contribution-and-ownership.zh.md) | 需求判断、领域建模、Harness 边界，以及上游与 Fashion 归属 |
 | 70 秒内 | [开发过程](docs/fashion/development-process.zh.md) | 如何分离产品决策、Cursor 实现、Codex 审计和人工验收 |
 | 90 秒内 | [验证证据](docs/fashion/validation-and-evidence.zh.md)、[截图清单](docs/fashion/assets/screenshots/screenshot-manifest.zh.md)与[已知限制](#known-limits) | 构建／测试／运行证据、诚实的能力边界和后续补强项 |
 
@@ -123,6 +123,7 @@ Cursor 根据冻结规格承担主要代码实现和测试编写。Codex 协助�
 - [Fashion 文档索引](docs/fashion/README.zh.md)
 - [产品案例](docs/fashion/product-case-study.zh.md)
 - [架构与归属图](docs/fashion/architecture.zh.md)
+- [贡献与归属地图](docs/fashion/contribution-and-ownership.zh.md)
 - [开发流程与 AI 协作](docs/fashion/development-process.zh.md)
 - [验证与证据](docs/fashion/validation-and-evidence.zh.md)
 - [数据来源与限制](docs/fashion/data-provenance-and-limitations.zh.md)
