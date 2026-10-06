@@ -3,4 +3,4 @@
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write packages/fashion/agent/README.md
 README.md: e8d68c683a59511796ccda35030c614affa9518d
-README.zh.md: 8832bc41799fc7907b10c0096bb57ae2b5e0be15
+README.zh.md: d1465fa68c3ef0f7e6cf403f22faf56174a5f2fa

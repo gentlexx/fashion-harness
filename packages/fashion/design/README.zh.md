@@ -32,6 +32,8 @@ kind: "package-reference"
 
 需要 `storageDomain`、`fashionProjectRegistry`、`fashionResearchRegistry` 与 `fashionAnalysisRegistry`。上游 selected Opportunity 校验只经由 analysis registry。`review_ready` 要求恰好三个 Concept 且 pairwise 结构差异通过。打开审核要求 `review_ready` ConceptSet 精确 revision；批准要求当前 select；生成要求当前有效批准。DeliverableSnapshot 身份使用 RFC 8785 JCS + SHA-256。受众过滤由 Host 拥有（`public_portfolio` 不是自动发布）。JSON 与 Markdown 从已批准精确 Concept revision 的同一份冻结快照渲染；Markdown 要求标题、设计意图、廓形与比例均非空，缺失时生成以 `FashionDesignRenderFailedError` 失败，而不写入空字段。对不展示该 Concept 的受众，渲染“已隐去”标记。R0 使用既有 R0 项目下的固定设计与审核 id；漂移或部分种子在启动时失败。
 
+<a id="model-experience"></a>
+
 ## 模型体验
 
 无。本包不注册模型可见的 tool、prompt 或 session event。本 Host 服务不会把设计对象注入模型请求。

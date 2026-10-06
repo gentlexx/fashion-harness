@@ -6,9 +6,9 @@
 
 Fashion Harness 把小规模、可归属的研究资料组织为可审核的设计机会、三个差异化概念方向、人工决策、版本化交付物、反馈与评测记录。它服务于需要检查证据和修订历史的服装设计师，不把 AI 描述成可以替代专业判断的自治系统。
 
-**作品状态：** 冻结的本地应用候选已经通过 T-06 构建、typecheck、46 个 Fashion 定向测试文件／284 个测试、全新运行目录启动、HTTP 访问、人工浏览器检查和截图采集；产品限制与仓库限制继续公开披露。
+**作品状态：** 2026-10-06 已对冻结应用提交完成独立本地验证：全量构建、typecheck、46 个 Fashion 定向测试文件／284 个测试、全新运行目录启动、HTTP 访问、人工浏览器检查和截图采集均通过；产品限制与仓库限制继续公开披露。
 
-[90 秒阅读路径](#90-second-review-path) · [本地运行](#run) · [验证证据](docs/fashion/validation-and-evidence.zh.md) · [已知限制](#known-limits)
+[90 秒阅读路径](#90-second-review-path) · [责任边界](#ownership-and-ai-assisted-implementation) · [本地运行](#run) · [验证证据](docs/fashion/validation-and-evidence.zh.md) · [已知限制](#known-limits)
 
 ![包含公开案例和本地项目入口的 Fashion Harness 项目优先首页](docs/fashion/assets/screenshots/01-fashion-home.png)
 
@@ -20,12 +20,23 @@ Fashion Harness 把小规模、可归属的研究资料组织为可审核的设�
 
 | 时间 | 查看内容 | 能力证据 |
 | --- | --- | --- |
-| 前 15 秒 | 本页、首页截图和[当前版本实现了什么](#what-this-version-implements) | 产品问题、当前闭环和可见结果 |
-| 45 秒内 | [产品案例](docs/fashion/product-case-study.zh.md)、[架构说明](docs/fashion/architecture.zh.md)与[贡献／归属地图](docs/fashion/contribution-and-ownership.zh.md) | 需求判断、领域建模、Harness 边界，以及上游与 Fashion 归属 |
-| 70 秒内 | [开发过程](docs/fashion/development-process.zh.md) | 如何分离产品决策、Cursor 实现、Codex 审计和人工验收 |
-| 90 秒内 | [验证证据](docs/fashion/validation-and-evidence.zh.md)、[截图清单](docs/fashion/assets/screenshots/screenshot-manifest.zh.md)与[已知限制](#known-limits) | 构建／测试／运行证据、诚实的能力边界和后续补强项 |
+| 前 15 秒 | 留在本页阅读摘要并查看截图 | 产品问题与可见结果 |
+| 35 秒内 | [当前版本实现了什么](#what-this-version-implements) | 当前业务闭环与已验证工程切片 |
+| 55 秒内 | [责任边界与 AI 辅助实现](#ownership-and-ai-assisted-implementation) | 我决定了什么、AI 实现了什么、哪些内容仍归上游所有 |
+| 75 秒内 | [为什么它是 Harness](#why-this-is-a-harness-not-a-chat-demo)与[设计决策](#design-decisions-worth-inspecting) | 系统边界、人工权威、来源、revision 与评测选择 |
+| 90 秒内 | [已知限制](#known-limits)与本页验证摘要 | 展示交付证据，但不把规划或测试包装成夸大的能力声明 |
 
 如果进入面试深度，可继续查看[数据来源](docs/fashion/data-provenance-and-limitations.zh.md)、[学习与迭代](docs/fashion/learning-and-iteration.zh.md)和[路线图](docs/fashion/roadmap-and-boundaries.zh.md)。
+
+<a id="ownership-and-ai-assisted-implementation"></a>
+
+## 责任边界与 AI 辅助实现
+
+我负责产品问题、业务流程和领域决策，决定范围、技术路线、验收标准、任务组织、复核结论和公开边界，并以能够解释、修改、调试和验证为实践目标。
+
+Cursor 根据冻结规格承担主要代码实现和测试编写。Codex 协助资料调查、风险分析、任务拆分、验收设计和独立复核。AI 输出不会自动视为通过：检查失败会进入明确修复，公开表述只覆盖可检查或可复现的事实。
+
+仓库中存在 TypeScript、React、Cordis、Storage 和测试等技术，不代表我独立手写或完全掌握上游每一部分。完整上游 monorepo 为可复现性而保留；Fashion package、profile 装配和公开作品集材料与上游归属的边界见[架构说明](docs/fashion/architecture.zh.md)和[贡献与归属地图](docs/fashion/contribution-and-ownership.zh.md)。
 
 <a id="what-this-version-implements"></a>
 
@@ -55,7 +66,9 @@ Project
 - 确定性评测规则，以及仍需人工分诊的 Improvement Queue；
 - Fashion profile 已配置为关闭上游通用欢迎流程；首次启动仍会出现 API Key 引导，但可用“稍后配置”关闭，实时模型动作仍依赖用户配置 Provider。
 
-T-06 已在冻结应用提交 `c1a8010b72764876b17744776d674fefc35d4ea9` 上完成离线冻结锁文件安装、全量构建（252 个客户端产物）、typecheck、46 个 Fashion 定向测试文件／284 个测试、全新 `DSH_HOME` 启动、页面 HTTP 200、人工浏览器主链检查和六张证据截图。全仓 translation-pairing 与 Markdown 链接门禁仍会报告：部分保留的上游文档链接指向候选包主动排除的 `.agents`／`.github` 内容；这是已披露的文档债务，不应被写成 Fashion 运行失败或全仓通过。
+2026-10-06 已对冻结应用提交 `c1a8010b72764876b17744776d674fefc35d4ea9` 完成独立验证，包括离线冻结锁文件安装、全量构建（252 个客户端产物）、typecheck、46 个 Fashion 定向测试文件／284 个测试、全新 `DSH_HOME` 启动、页面 HTTP 200、人工浏览器主链检查和六张证据截图。全仓 translation-pairing 与 Markdown 链接门禁仍会报告：部分保留的上游文档链接指向候选包主动排除的 `.agents`／`.github` 内容；这是已披露的文档债务，不应被写成 Fashion 运行失败或全仓通过。
+
+<a id="why-this-is-a-harness-not-a-chat-demo"></a>
 
 ## 为什么它是 Harness，而不是聊天 Demo
 
@@ -86,7 +99,9 @@ Web 服务默认使用 `http://127.0.0.1:3080`。评估仓库时建议使用隔�
 
 确定性的 Fashion 工作台设计为无需 API Key 即可浏览。实时 Agent／模型动作需要通过 Models 设置页或启动环境配置 Provider。不要提交凭据；[`.env.example`](.env.example) 只包含变量名。
 
-> T-06 已用离线冻结锁文件安装和全新 `DSH_HOME` 在冻结应用提交上验证这条运行路径。准确结果与已披露失败见[验证与证据](docs/fashion/validation-and-evidence.zh.md)。
+> 这条运行路径已于 2026-10-06 使用冻结应用提交、离线冻结锁文件安装和全新 `DSH_HOME` 完成独立验证。准确结果与已披露失败见[验证与证据](docs/fashion/validation-and-evidence.zh.md)。
+
+<a id="design-decisions-worth-inspecting"></a>
 
 ## 值得检查的设计决策
 
@@ -96,14 +111,6 @@ Web 服务默认使用 `http://127.0.0.1:3080`。评估仓库时建议使用隔�
 - **只读 Agent 边界：** 模型读取绑定项目的紧凑快照，不能传入任意 Project ID，也不能修改 Fashion storage。
 - **如实处理结果：** `unavailable` 和 `not_authorized` 不会被换算成 0；结果记录保留来源和验证状态。
 - **评测不等于自动修复：** 失败规则可以生成 ImprovementItem，但只能由人工接受、规划、解决或拒绝。
-
-## 我的职责与 AI 辅助实现
-
-我负责产品问题、业务流程和领域决策，决定范围、技术路线、验收标准、任务组织、复核结论和公开边界，并以能够解释、修改、调试和验证为实践目标。
-
-Cursor 根据冻结规格承担主要代码实现和测试编写。Codex 协助资料调查、风险分析、任务拆分、验收设计和独立复核。AI 输出不会自动视为通过：检查失败会进入明确修复，公开表述只覆盖可检查或可复现的事实。
-
-仓库中存在 TypeScript、React、Cordis、Storage 和测试等技术，不代表我独立手写或完全掌握上游每一部分。完整上游 monorepo 为可复现性而保留；Fashion package、profile 装配和公开作品集材料与上游归属的边界见[架构说明](docs/fashion/architecture.zh.md)。
 
 <a id="known-limits"></a>
 

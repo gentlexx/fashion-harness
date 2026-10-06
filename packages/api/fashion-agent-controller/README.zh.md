@@ -25,6 +25,8 @@ kind: "package-reference"
 
 Host 方法为 `bindSession` 与 `getStatus`。Client 入口 `$mount` 本包生成的 `./remote` 贡献，然后安装带 `bind` 与 `sync` 的 `ctx.fashionAgent`。Client 不会为查询发送模型自选的项目 id；查询仍是绑定会话上的 Host 工具。
 
+<a id="model-experience"></a>
+
 ## 模型体验
 
 无，因为本 Remote 只投影 Host 绑定状态，不注册 prompt、tool 或 session event。

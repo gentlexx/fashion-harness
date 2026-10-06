@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write docs/fashion/contribution-and-ownership.md
-contribution-and-ownership.md: 1955de370b08eea19ff02f596319e2c4086d8b0e
-contribution-and-ownership.zh.md: 2fb8eb410374752f0bbb4c89f0d69cfdfb9fadfa
+contribution-and-ownership.md: c57c7c6c6b0ee49f7bf80ce58b19c3abd28a6a2e
+contribution-and-ownership.zh.md: 4c821e00c71b8700d2beea7b2dc837305bbc0b3d

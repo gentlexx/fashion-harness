@@ -35,6 +35,8 @@ kind: "package-reference"
 
 `fashion_project_query` 只接受 `section`。Host 从当前会话绑定读取 `projectId`。
 
+<a id="model-experience"></a>
+
 ## 模型体验
 
 ### 只读系统提示

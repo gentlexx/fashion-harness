@@ -6,9 +6,9 @@ English | [中文](README.zh.md)
 
 Fashion Harness turns a small, attributable research set into reviewable design opportunities, three differentiated concept directions, human decisions, versioned deliverables, feedback, and evaluation records. It is designed for fashion designers who need evidence and revision history around AI-assisted work—not an autonomous system that replaces professional judgment.
 
-**Portfolio status:** the frozen local application candidate passed T-06 build, typecheck, 46 Fashion-focused test files / 284 tests, fresh-home startup, HTTP access, manual browser inspection, and screenshot capture. Known product and repository limitations remain disclosed.
+**Portfolio status:** on 2026-10-06, independent local validation of the frozen application commit passed the full build, typecheck, 46 Fashion-focused test files / 284 tests, fresh-home startup, HTTP access, manual browser inspection, and screenshot capture. Known product and repository limitations remain disclosed.
 
-[90-second review](#90-second-review-path) · [Run locally](#run) · [Validation evidence](docs/fashion/validation-and-evidence.md) · [Known limits](#known-limits)
+[90-second review](#90-second-review-path) · [Ownership](#ownership-and-ai-assisted-implementation) · [Run locally](#run) · [Validation evidence](docs/fashion/validation-and-evidence.md) · [Known limits](#known-limits)
 
 ![Fashion Harness project-first home with the public case and local project entry](docs/fashion/assets/screenshots/01-fashion-home.png)
 
@@ -20,12 +20,23 @@ Fashion Harness turns a small, attributable research set into reviewable design 
 
 | Time | Inspect | What it demonstrates |
 | --- | --- | --- |
-| First 15 seconds | This page, the screenshot, and [What this version implements](#what-this-version-implements) | The product problem, current workflow, and visible result |
-| By 45 seconds | [Product case](docs/fashion/product-case-study.md), [architecture](docs/fashion/architecture.md), and [contribution / ownership map](docs/fashion/contribution-and-ownership.md) | Requirement judgment, domain modeling, Harness boundaries, and upstream-versus-Fashion ownership |
-| By 70 seconds | [Development process](docs/fashion/development-process.md) | How product decisions, Cursor implementation, Codex audit, and human acceptance were separated |
-| By 90 seconds | [Validation evidence](docs/fashion/validation-and-evidence.md), [screenshot manifest](docs/fashion/assets/screenshots/screenshot-manifest.md), and [known limits](#known-limits) | Build/test/runtime evidence, honest capability boundaries, and what remains to be improved |
+| First 15 seconds | Stay on this page: read the summary and inspect the screenshot | The product problem and visible result |
+| By 35 seconds | [What this version implements](#what-this-version-implements) | The current workflow and verified engineering slice |
+| By 55 seconds | [Ownership and AI-assisted implementation](#ownership-and-ai-assisted-implementation) | What I decided, what AI implemented, and what remains upstream-owned |
+| By 75 seconds | [Why this is a Harness](#why-this-is-a-harness-not-a-chat-demo) and [design decisions](#design-decisions-worth-inspecting) | System boundaries, human authority, provenance, revision, and evaluation choices |
+| By 90 seconds | [Known limits](#known-limits) and the validation summary on this page | Delivery evidence without turning plans or tests into inflated claims |
 
 For an interview-depth review, continue with [data provenance](docs/fashion/data-provenance-and-limitations.md), [learning and iteration](docs/fashion/learning-and-iteration.md), and the [roadmap](docs/fashion/roadmap-and-boundaries.md).
+
+<a id="ownership-and-ai-assisted-implementation"></a>
+
+## Ownership and AI-assisted implementation
+
+I own the product problem, workflow and domain decisions, scope, technical-route choices, acceptance criteria, task organization, review judgments, and publication decisions. I use the repository to practice explaining, modifying, debugging, and validating an integrated AI application.
+
+Cursor performed most code implementation and test-writing from frozen specifications. Codex supported information discovery, risk analysis, task decomposition, acceptance design, and independent review. AI output was not treated as acceptance: failing checks led to explicit repairs, and the public claims are limited to what can be inspected or reproduced.
+
+The presence of TypeScript, React, Cordis, storage, testing, or other technologies in this monorepo is not a claim that I independently authored or fully mastered every part. The large upstream codebase is retained for reproducibility; the Fashion packages, profile integration, and public portfolio documents are separated from upstream ownership in [Architecture](docs/fashion/architecture.md) and the [Contribution and Ownership Map](docs/fashion/contribution-and-ownership.md).
 
 <a id="what-this-version-implements"></a>
 
@@ -55,7 +66,9 @@ It also includes:
 - deterministic evaluation rules and an improvement queue that still requires human triage;
 - Fashion-profile configuration that disables the generic upstream welcome flow; the first-run API-key dialog remains visible but can be dismissed with **Configure later**, while live model actions remain provider-dependent.
 
-On the frozen application commit `c1a8010b72764876b17744776d674fefc35d4ea9`, T-06 completed an offline frozen-lockfile install, a full build (252 client artifacts), typecheck, 46 Fashion-focused test files / 284 tests, fresh-`DSH_HOME` startup, HTTP 200 page access, manual browser-flow inspection, and six evidence screenshots. The corpus-wide translation-pairing and Markdown-link gates still report retained upstream documentation links to excluded `.agents` / `.github` content; this is disclosed documentation debt rather than a Fashion runtime pass.
+On 2026-10-06, independent validation of the frozen application commit `c1a8010b72764876b17744776d674fefc35d4ea9` completed an offline frozen-lockfile install, a full build (252 client artifacts), typecheck, 46 Fashion-focused test files / 284 tests, fresh-`DSH_HOME` startup, HTTP 200 page access, manual browser-flow inspection, and six evidence screenshots. The corpus-wide translation-pairing and Markdown-link gates still report retained upstream documentation links to excluded `.agents` / `.github` content; this is disclosed documentation debt rather than a Fashion runtime pass.
+
+<a id="why-this-is-a-harness-not-a-chat-demo"></a>
 
 ## Why this is a Harness, not a chat demo
 
@@ -85,7 +98,9 @@ The web server uses `http://127.0.0.1:3080` by default. Use an isolated `DSH_HOM
 
 The deterministic Fashion workbench is intended to be browsable without an API key. Live Agent/model actions require a provider configured through the Models settings page or the launching environment. Never commit credentials; [`.env.example`](.env.example) contains names only.
 
-> T-06 verified this workflow on the frozen application commit using an offline frozen-lockfile install and a fresh `DSH_HOME`. Exact results and disclosed failures are recorded in [Validation and Evidence](docs/fashion/validation-and-evidence.md).
+> This workflow was independently verified on 2026-10-06 using the frozen application commit, an offline frozen-lockfile install, and a fresh `DSH_HOME`. Exact results and disclosed failures are recorded in [Validation and Evidence](docs/fashion/validation-and-evidence.md).
+
+<a id="design-decisions-worth-inspecting"></a>
 
 ## Design decisions worth inspecting
 
@@ -95,14 +110,6 @@ The deterministic Fashion workbench is intended to be browsable without an API k
 - **Read-only Agent boundary:** the model receives a compact project snapshot and can query the bound project, but cannot pass an arbitrary project ID or mutate Fashion storage.
 - **Truthful outcome handling:** `unavailable` and `not_authorized` are not converted to zero; outcome records carry source and verification state.
 - **Evaluation without automatic self-repair:** failed rules can propose an `ImprovementItem`, but only a person may accept, plan, resolve, or reject it.
-
-## My role and AI-assisted implementation
-
-I own the product problem, workflow and domain decisions, scope, technical-route choices, acceptance criteria, task organization, review judgments, and publication decisions. I use the repository to practice explaining, modifying, debugging, and validating an integrated AI application.
-
-Cursor performed most code implementation and test-writing from frozen specifications. Codex supported information discovery, risk analysis, task decomposition, acceptance design, and independent review. AI output was not treated as acceptance: failing checks led to explicit repairs, and the public claims are limited to what can be inspected or reproduced.
-
-The presence of TypeScript, React, Cordis, storage, testing, or other technologies in this monorepo is not a claim that I independently authored or fully mastered every part. The large upstream codebase is retained for reproducibility; the Fashion packages, profile integration, and public portfolio documents are separated from upstream ownership in [Architecture](docs/fashion/architecture.md).
 
 <a id="known-limits"></a>
 

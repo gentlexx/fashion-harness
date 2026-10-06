@@ -25,6 +25,7 @@ The local history is intentionally staged so reviewers can inspect each boundary
 | `0a24188` | Screenshot evidence | 6 | Six screenshots from the frozen application commit |
 | `a827b5e` | T-06 evidence update | 24 | Verified counts, runtime result, screenshot manifest, and disclosed debt |
 | `4831eff` | Recruiter-first front page | 3 | Bilingual first screen and 90-second reading path |
+| `152c7f1` | Contribution and GitHub boundary | 10 | Contribution map, recruiter navigation refinement, and Linguist boundary between upstream and Fashion-owned paths |
 
 The frozen application behavior was verified at `c1a8010b72764876b17744776d674fefc35d4ea9`. Later commits add evidence and presentation material rather than silently changing that application.
 
