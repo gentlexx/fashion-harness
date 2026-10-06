@@ -9,6 +9,12 @@
  * Non-index assets stay public. The dist location is workspace knowledge of
  * the composing application, so `distIndex` is typically supplied through a
  * `!!js` expression, never hardcoded by a deployment.
+ *
+ * A client plugin that owns history-API routes declares their path prefixes
+ * through the {@link FrontendStaticRoutes} service, which extends index
+ * rendering to dist misses under those prefixes so a deep route survives a
+ * refresh or a pasted URL. No prefix is assumed: a composition that declares
+ * none keeps exactly the two explicit index entry points.
  * @module @deepseek-ai/dsh-host-frontend-static
  */
 
@@ -25,6 +31,30 @@ export const name = 'frontend-static'
 
 /** Services required before the authenticated fallback seat can be claimed. */
 export const inject = ['webServer', 'connection']
+
+/** Registry of the browser application's history-API route prefixes. */
+export interface FrontendStaticRoutes {
+  /**
+   * Declare one absolute URL path prefix owned by the browser application's
+   * history router. A GET/HEAD request at or under the prefix that matches no
+   * dist file then renders the index instead of 404, so the router resolves
+   * the route in the browser. Paths whose extension names a served static type
+   * keep the 404, so a missing asset never arrives as HTML.
+   * @param prefix - absolute path below the site root, such as `/projects`.
+   * @returns the disposer that withdraws this prefix.
+   * @throws when the prefix is not an absolute path below the site root.
+   */
+  registerAppRoute: (prefix: string) => () => void
+}
+
+declare module '@deepseek-ai/cordis' {
+  interface Context {
+    frontendStatic: FrontendStaticRoutes
+  }
+}
+
+/** Service name carrying the {@link FrontendStaticRoutes} registry. */
+const ROUTES_SERVICE = 'frontendStatic'
 
 /** Plugin config: the dist anchor. */
 export interface Config {
@@ -59,6 +89,39 @@ const STATIC_MISS_CODES: ReadonlySet<string | undefined> = new Set([
 ])
 
 /**
+ * Reject a prefix that cannot name a browser route below the site root.
+ * The site root already has its two explicit index entry points, so `/` as a
+ * prefix would turn every miss into HTML and erase the 404 contract.
+ * @param prefix - the caller's declared prefix.
+ * @returns the prefix without a trailing slash.
+ */
+function normalizeAppRoute(prefix: string): string {
+  const trimmed = prefix.trim()
+  const collapsed = trimmed.endsWith('/') ? trimmed.slice(0, -1) : trimmed
+  if (!collapsed.startsWith('/') || collapsed === '' || collapsed.includes('//')) {
+    throw new Error(
+      `frontend-static: app route prefix ${JSON.stringify(prefix)} must be an absolute path below the site root, such as "/projects"`,
+    )
+  }
+  return collapsed
+}
+
+/**
+ * Whether a dist miss is a deep browser-application route rather than an absent file.
+ * @param pathname - decoded request pathname.
+ * @param prefixes - currently declared route prefixes.
+ */
+function ownsAppRoute(pathname: string, prefixes: ReadonlySet<string>): boolean {
+  // An extension naming a served static type is an asset request: a missing
+  // bundle, stylesheet, or source map stays 404 rather than arriving as HTML.
+  if (Object.hasOwn(MIME, extname(pathname))) return false
+  for (const prefix of prefixes) {
+    if (pathname === prefix || pathname.startsWith(`${prefix}/`)) return true
+  }
+  return false
+}
+
+/**
  * Serve one GET/HEAD static request from the dist root.
  * @param pathname - decoded URL pathname of the request.
  * @param res - the node:http response to write.
@@ -66,12 +129,15 @@ const STATIC_MISS_CODES: ReadonlySet<string | undefined> = new Set([
  * @param distIndex - absolute path of index.html inside distRoot.
  * @param authorizeIndex - authenticates an index response before its bytes are read.
  * @param renderIndex - produces the index.html body (structured injection
- * rendering) for the dist root and configured index path.
+ * rendering) for the dist root, the configured index path, and declared
+ * browser-application routes.
+ * @param appRoutes - declared history-router prefixes whose dist misses render the index.
  */
 export async function serveStatic(
   pathname: string, res: ServerResponse, distRoot: string, distIndex: string,
   authorizeIndex: () => boolean,
   renderIndex: () => Promise<string>,
+  appRoutes: ReadonlySet<string> = new Set(),
 ): Promise<void> {
   const target = resolve(normalize(join(distRoot, pathname)))
   // Traversal rejection: the target must be distRoot itself (`/`) or stay under
@@ -97,9 +163,16 @@ export async function serveStatic(
     // Only absent or non-file targets are 404; other filesystem failures reach
     // the webserver's request-failure handling.
     if (!STATIC_MISS_CODES.has((error as NodeJS.ErrnoException).code)) throw error
-    res.writeHead(404)
-    res.end()
-    return
+    if (!ownsAppRoute(pathname, appRoutes)) {
+      res.writeHead(404)
+      res.end()
+      return
+    }
+    // A declared browser route resolves in the router, so the shell answers
+    // here on the same authenticated terms as the explicit index entry points.
+    if (!authorizeIndex()) return
+    body = await renderIndex()
+    type = HTML_MIME
   }
   res.writeHead(200, { 'content-type': type })
   res.end(body)
@@ -121,6 +194,16 @@ export function apply(ctx: Context, config: Config): void {
     const body = ctx.webServer.renderIndex(await readFile(distIndex, 'utf8'))
     return body.replace(/<head(?:\s[^>]*)?>/i, open => `${open}<base href="/">`)
   }
+  // Read at request time, so a route owner mounting after this seat is claimed
+  // still reaches the router, and a disposed owner stops answering at once.
+  const appRoutes = new Set<string>()
+  ctx.provide(ROUTES_SERVICE, {
+    registerAppRoute: (prefix: string) => {
+      const normalized = normalizeAppRoute(prefix)
+      appRoutes.add(normalized)
+      return () => { appRoutes.delete(normalized) }
+    },
+  } satisfies FrontendStaticRoutes)
   ctx.effect(() => ctx.webServer.registerFallback(async (req, res) => {
     // Non-GET/HEAD without a matching named route is 405 (fallback-only
     // semantics: named routes own their method handling).
@@ -138,6 +221,7 @@ export function apply(ctx: Context, config: Config): void {
       distIndex,
       () => ctx.connection.authorizeIndex(req, res),
       renderIndex,
+      appRoutes,
     )
   }), 'frontend-static: fallback seat')
 }

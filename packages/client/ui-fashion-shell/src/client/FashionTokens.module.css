@@ -1,0 +1,46 @@
+/**
+ * Fashion workbench design tokens (F1-03 §9.1).
+ * Prefer `--dsw-alias-*`; Fashion accents via color-mix — no scattered hex in feature CSS.
+ */
+.fashionTheme {
+  --fh-canvas: color-mix(in srgb, var(--dsw-alias-bg-base) 92%, var(--dsw-alias-state-warn-tertiary) 8%);
+  --fh-surface: var(--dsw-alias-bg-layer-1);
+  --fh-surface-muted: var(--dsw-alias-bg-layer-2);
+  --fh-ink: var(--dsw-alias-label-primary);
+  --fh-ink-muted: var(--dsw-alias-label-secondary);
+  --fh-border: var(--dsw-alias-border-l2);
+  --fh-khaki: color-mix(in srgb, var(--dsw-alias-state-warn-primary) 55%, var(--dsw-alias-bg-layer-2) 45%);
+  --fh-sage: var(--dsw-alias-state-success-tertiary);
+  --fh-terracotta: var(--dsw-alias-state-warn-label);
+  --fh-focus: var(--dsw-alias-brand-primary);
+  --fh-radius-card: 8px;
+  --fh-radius-control: 6px;
+  --fh-radius-chip: 999px;
+  --fh-space-1: 4px;
+  --fh-space-2: 8px;
+  --fh-space-3: 12px;
+  --fh-space-4: 16px;
+  --fh-space-5: 24px;
+  --fh-space-6: 32px;
+  --fh-content-max: 1120px;
+  --fh-font-editorial: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+}
+
+.fashionTheme :focus-visible {
+  outline: 2px solid var(--fh-focus);
+  outline-offset: 2px;
+}
+
+.fashionTheme :focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fashionTheme *,
+  .fashionTheme *::before,
+  .fashionTheme *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

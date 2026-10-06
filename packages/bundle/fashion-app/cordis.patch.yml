@@ -1,0 +1,57 @@
+# Fashion Harness product shell over dsh-base + dsh-web-app.
+# Disables the generic coding sidebar and mounts the Fashion project-first shell.
+# Does not replace ui-layout or register a second root.
+
+- id: ui-sidebar
+  disabled: true
+
+- id: ui-settings-models
+  config:
+    showWelcomeNotice: false
+    showDeepSeekOnboarding: false
+
+- insert:
+    - id: fashion-project
+      name: '@gentlexx/dsh-fashion-project'
+
+    - id: fashion-research
+      name: '@gentlexx/dsh-fashion-research'
+
+    - id: fashion-analysis
+      name: '@gentlexx/dsh-fashion-analysis'
+
+    - id: fashion-design
+      name: '@gentlexx/dsh-fashion-design'
+
+    - id: fashion-feedback
+      name: '@gentlexx/dsh-fashion-feedback'
+
+    - id: fashion-evaluation
+      name: '@gentlexx/dsh-fashion-evaluation'
+
+    - id: fashion-project-controller
+      name: '@gentlexx/dsh-api-fashion-project-controller'
+
+    - id: fashion-research-controller
+      name: '@gentlexx/dsh-api-fashion-research-controller'
+
+    - id: fashion-analysis-controller
+      name: '@gentlexx/dsh-api-fashion-analysis-controller'
+
+    - id: fashion-design-controller
+      name: '@gentlexx/dsh-api-fashion-design-controller'
+
+    - id: fashion-feedback-controller
+      name: '@gentlexx/dsh-api-fashion-feedback-controller'
+
+    - id: fashion-evaluation-controller
+      name: '@gentlexx/dsh-api-fashion-evaluation-controller'
+
+    - id: fashion-agent
+      name: '@gentlexx/dsh-fashion-agent'
+
+    - id: fashion-agent-controller
+      name: '@gentlexx/dsh-api-fashion-agent-controller'
+
+    - id: ui-fashion-shell
+      name: '@gentlexx/dsh-client-ui-fashion-shell'

@@ -73,6 +73,18 @@ describe('ui-settings-models apply', () => {
     ])
   })
 
+  it('can suppress startup onboarding while keeping the Models settings section', async () => {
+    const b = await bench()
+    declare(b.slots)
+    await b.ctx.plugin({ inject: [...inject], apply }, {
+      showWelcomeNotice: false,
+      showDeepSeekOnboarding: false,
+    }).await()
+    expect(b.slots.entries('settings.section')).toHaveLength(1)
+    expect(b.slots.entries('settings.section')[0]!.component).toBe(ModelsSection)
+    expect(b.slots.entries('settings.onboarding')).toHaveLength(0)
+  })
+
   it('registers the models nav entry for declarations before or after apply', async () => {
     const before = await bench()
     declare(before.slots)

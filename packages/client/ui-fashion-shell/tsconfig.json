@@ -1,0 +1,94 @@
+{
+  "extends": "../../../tsconfig.base.client.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib/types",
+    "types": ["client-build-environment", "node"]
+  },
+  "include": [
+    "src"
+  ],
+  "references": [
+    {
+      "path": "../../../vendor/cordis"
+    },
+    {
+      "path": "../ui-slots"
+    },
+    {
+      "path": "../store"
+    },
+    {
+      "path": "../ui-primitives"
+    },
+    {
+      "path": "../ui-renderer"
+    },
+    {
+      "path": "../ui-session"
+    },
+    {
+      "path": "../ui-conversation"
+    },
+    {
+      "path": "../ui-layout"
+    },
+    {
+      "path": "../locale"
+    },
+    {
+      "path": "../../host/frontend-static"
+    },
+    {
+      "path": "../../api/fashion-project-controller/tsconfig.client.json"
+    },
+    {
+      "path": "../../api/fashion-research-controller/tsconfig.client.json"
+    },
+    {
+      "path": "../../api/fashion-analysis-controller/tsconfig.client.json"
+    },
+    {
+      "path": "../../api/fashion-design-controller/tsconfig.client.json"
+    },
+    {
+      "path": "../../api/fashion-feedback-controller/tsconfig.client.json"
+    },
+    {
+      "path": "../../api/fashion-evaluation-controller/tsconfig.client.json"
+    },
+    {
+      "path": "../../api/fashion-agent-controller/tsconfig.client.json"
+    },
+    {
+      "path": "../../api/session-controller/tsconfig.client.json"
+    },
+    {
+      "path": "../../fashion/project"
+    },
+    {
+      "path": "../../fashion/research"
+    },
+    {
+      "path": "../../fashion/analysis"
+    },
+    {
+      "path": "../../fashion/design"
+    },
+    {
+      "path": "../../fashion/feedback"
+    },
+    {
+      "path": "../../fashion/evaluation"
+    },
+    {
+      "path": "../../fashion/agent"
+    },
+    {
+      "path": "../../util/brand"
+    },
+    {
+      "path": "../../util/crypto"
+    }
+  ]
+}

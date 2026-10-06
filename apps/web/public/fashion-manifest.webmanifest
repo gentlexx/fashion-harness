@@ -1,0 +1,16 @@
+{
+  "id": "/",
+  "name": "Fashion Harness",
+  "short_name": "FH",
+  "start_url": "/",
+  "scope": "/",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "/fashion-favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -32,6 +32,9 @@ The packages below provide the Remote layer; the package READMEs own the exhaust
 | [`settings-controller/`](settings-controller/README.md) | Owns the configuration-surface reads and writes over the settings-domain seams. | `ctx.settingsController`, `ctx.credentialsController` / `ctx.remote.settings`, `ctx.remote.credentials` |
 | [`workspace-controller/`](workspace-controller/README.md) | Owns Workspace mutations and the complete Client Workspace projection. | `ctx.workspaceController` / `ctx.remote.workspace` |
 | [`workspace-files/`](workspace-files/README.md) | Owns bounded workspace file access — `stat`, paged `read`, `list`, and the instrumented-operation `changes` feed — and the Client `file` resource provider over it. | `ctx.workspaceFiles` / `ctx.remote.workspaceFiles` |
+| [`fashion-project-controller/`](fashion-project-controller/README.md) | Owns Fashion Project create/get/list Remotes and the Client `fashionProjects` snapshot service. | `ctx.fashionProjectController` / `ctx.remote.fashionProject` / `ctx.fashionProjects` |
+| [`fashion-research-controller/`](fashion-research-controller/README.md) | Owns Fashion Research CRUD/review Remotes and the Client `fashionResearch` snapshot service. | `ctx.fashionResearchController` / `ctx.remote.fashionResearch` / `ctx.fashionResearch` |
+| [`fashion-analysis-controller/`](fashion-analysis-controller/README.md) | Owns Fashion Analysis Remotes and the Client `fashionAnalysis` snapshot service. | `ctx.fashionAnalysisController` / `ctx.remote.fashionAnalysis` / `ctx.fashionAnalysis` |
 
 Remote calls run Client → Host over the application's shared Connection. API Gateway owns Remote transport, while the controller packages own Session, configuration-surface, and Workspace behavior. Feature packages register exact Connection Fetch routes for responses that do not fit Remote invocation, such as streamed downloads.
 

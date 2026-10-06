@@ -1,0 +1,55 @@
+{
+  "name": "@gentlexx/dsh-fashion-app",
+  "description": "Fashion Harness product shell bundle: disables the generic sidebar and mounts ui-fashion-shell over dsh-base + dsh-web-app",
+  "version": "0.1.5-rc.2",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "cordis.patch.yml",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@gentlexx/dsh-api-fashion-analysis-controller": "workspace:^",
+    "@gentlexx/dsh-api-fashion-design-controller": "workspace:^",
+    "@gentlexx/dsh-api-fashion-agent-controller": "workspace:^",
+    "@gentlexx/dsh-api-fashion-evaluation-controller": "workspace:^",
+    "@gentlexx/dsh-api-fashion-feedback-controller": "workspace:^",
+    "@gentlexx/dsh-api-fashion-project-controller": "workspace:^",
+    "@gentlexx/dsh-api-fashion-research-controller": "workspace:^",
+    "@gentlexx/dsh-client-ui-fashion-shell": "workspace:^",
+    "@gentlexx/dsh-fashion-agent": "workspace:^",
+    "@gentlexx/dsh-fashion-analysis": "workspace:^",
+    "@gentlexx/dsh-fashion-design": "workspace:^",
+    "@gentlexx/dsh-fashion-evaluation": "workspace:^",
+    "@gentlexx/dsh-fashion-feedback": "workspace:^",
+    "@gentlexx/dsh-fashion-project": "workspace:^",
+    "@gentlexx/dsh-fashion-research": "workspace:^"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "workspace:^",
+    "@deepseek-ai/cordis-plugin-include": "workspace:^",
+    "@deepseek-ai/cordis-plugin-loader": "workspace:^",
+    "@deepseek-ai/dsh-client-connection": "workspace:^",
+    "@deepseek-ai/dsh-credentials-local": "workspace:^",
+    "@deepseek-ai/dsh-host-frontend-static": "workspace:^",
+    "@deepseek-ai/dsh-host-webserver": "workspace:^"
+  },
+  "private": true
+}

@@ -1,0 +1,37 @@
+.strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--fh-space-2);
+  padding: var(--fh-space-2) var(--fh-space-3);
+  border: 1px solid var(--fh-border);
+  border-radius: var(--fh-radius-card);
+  background: var(--fh-surface);
+  color: var(--fh-ink);
+  margin: 0 0 var(--fh-space-2);
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--fh-space-2);
+  min-width: 0;
+  flex: 1 1 200px;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.light {
+  font-size: 12px;
+  color: var(--fh-ink-muted);
+}
+
+.disclaimer {
+  font-size: 11px;
+  color: var(--fh-terracotta);
+}

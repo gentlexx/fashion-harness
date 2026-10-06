@@ -93,6 +93,13 @@ async function request(port: number, path: string, init?: RequestInit): Promise<
   }
 }
 
+/** Add one authenticated-session cookie without discarding caller-provided headers. */
+function authenticatedRequest(cookie: string, init?: RequestInit): RequestInit {
+  const headers = new Headers(init?.headers)
+  headers.set('cookie', cookie)
+  return { ...init, headers }
+}
+
 describe('real Loader composition', () => {
   it('serves explicit index entries and files while preserving HTTP error semantics', { timeout: 60_000 }, async () => {
     const loaded = await loadComposition()
@@ -109,11 +116,7 @@ describe('real Loader composition', () => {
     const setCookie = exchange.headers.get('set-cookie')
     if (setCookie === null) throw new Error('authenticated frontend did not set a cookie')
     const cookie = setCookie.split(';', 1)[0]!
-    const authenticated = (init?: RequestInit): RequestInit => {
-      const headers = new Headers(init?.headers)
-      headers.set('cookie', cookie)
-      return { ...init, headers }
-    }
+    const authenticated = authenticatedRequest.bind(undefined, cookie)
 
     expect(await request(port, '/')).toMatchObject({
       status: 401,
@@ -202,5 +205,92 @@ describe('real Loader composition', () => {
     await frontendEntry!.fiber?.dispose()
     expect((await request(port, '/no/such/route')).status).toBe(404)
     expect(() => server.registerFallback(() => {})).not.toThrow()
+  })
+
+  it('renders the shell for declared app routes without swallowing assets or API paths', { timeout: 60_000 }, async () => {
+    const loaded = await loadComposition()
+    const port = loaded.webServer.port
+    const launchUrl = loaded.connection.authenticatedUrl(`http://127.0.0.1:${String(port)}`)
+    const exchange = await fetch(launchUrl, { redirect: 'manual' })
+    const setCookie = exchange.headers.get('set-cookie')
+    if (setCookie === null) throw new Error('authenticated frontend did not set a cookie')
+    const cookie = setCookie.split(';', 1)[0]!
+    const authenticated = authenticatedRequest.bind(undefined, cookie)
+
+    // A prefix only answers once its owner declares it.
+    expect(await request(port, '/projects/p1/overview', authenticated())).toEqual({ status: 404, type: null, body: '' })
+
+    const withdraw = loaded.frontendStatic.registerAppRoute('/projects')
+
+    // The prefix itself and every depth below it reach the shell, so a refresh
+    // or a pasted URL reconstructs the route in the browser.
+    const deepRoutes = [
+      '/projects',
+      '/projects/p1/overview',
+      '/projects/r0-us-womens-khaki-utility-jacket/overview',
+      '/projects/p1/research/tasks/t1/analysis',
+      '/projects/p1/research/tasks/t1/analysis/items/r0-item-e01',
+      '/projects/p1/review',
+      '/projects/p1/deliverables/d1',
+      '/projects/p1/feedback/new',
+      '/projects/p1/evaluations/runs/run1',
+      '/projects/p1/improvements/i1',
+    ]
+    for (const path of deepRoutes) {
+      const got = await request(port, path, authenticated())
+      expect(got.status, path).toBe(200)
+      expect(got.type, path).toBe('text/html; charset=utf-8')
+      expect(got.body, path).toContain('shell')
+      expect(await request(port, path, authenticated({ method: 'HEAD' })), path).toEqual({
+        status: 200,
+        type: 'text/html; charset=utf-8',
+        body: '',
+      })
+    }
+
+    // A real dist file still wins over the route fallback.
+    expect(await request(port, '/app.js')).toMatchObject({ status: 200, type: 'text/javascript; charset=utf-8' })
+
+    // A missing asset under the prefix keeps its 404: the browser must not
+    // parse an HTML shell as a script, stylesheet, or source map.
+    const assetMissesUnderPrefix = [
+      '/projects/p1/missing.js',
+      '/projects/p1/missing.css',
+      '/projects/p1/missing.js.map',
+      '/projects/p1/missing.webmanifest',
+      '/projects/p1/missing.svg',
+      '/projects/p1/missing.json',
+    ]
+    for (const path of assetMissesUnderPrefix) {
+      expect(await request(port, path, authenticated()), path).toEqual({ status: 404, type: null, body: '' })
+    }
+
+    // Paths outside every declared prefix stay 404, and /api keeps its own
+    // named-route answer rather than the shell.
+    for (const path of ['/no/such/route', '/projectsx/p1', '/deliverables/d1']) {
+      expect(await request(port, path, authenticated()), path).toEqual({ status: 404, type: null, body: '' })
+    }
+    expect(await request(port, '/api/no/such/route', authenticated())).toEqual({
+      status: 404,
+      type: 'text/plain;charset=UTF-8',
+      body: 'not found',
+    })
+
+    // Deep routes are index responses, so they answer on the same terms as the
+    // explicit index entry points: authentication first, GET/HEAD only, and
+    // traversal rejected before any filesystem read.
+    expect((await request(port, '/projects/p1/overview')).status).toBe(401)
+    expect((await request(port, '/projects/p1', authenticated({ method: 'POST' }))).status).toBe(405)
+    expect((await request(port, '/projects/..%2f..%2fetc%2fpasswd', authenticated())).status).toBe(403)
+
+    // A withdrawn prefix stops answering immediately.
+    withdraw()
+    expect(await request(port, '/projects/p1/overview', authenticated())).toEqual({ status: 404, type: null, body: '' })
+
+    // Only absolute paths below the site root can be declared: `/` would erase
+    // the 404 contract for every miss.
+    for (const invalid of ['/', '', 'projects', '//projects']) {
+      expect(() => loaded.frontendStatic.registerAppRoute(invalid), invalid).toThrow(/absolute path below the site root/)
+    }
   })
 })

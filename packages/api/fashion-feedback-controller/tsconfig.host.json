@@ -1,0 +1,22 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib/types",
+    "tsBuildInfoFile": "lib/tsconfig.host.tsbuildinfo"
+  },
+  "files": [
+    "src/index.ts",
+    "src/types.ts",
+    "src/commands.ts"
+  ],
+  "references": [
+    { "path": "../../../vendor/cordis" },
+    { "path": "../../fashion/project" },
+    { "path": "../../fashion/research" },
+    { "path": "../../fashion/analysis" },
+    { "path": "../../fashion/design" },
+    { "path": "../../fashion/feedback" },
+    { "path": "../../typert/protocol" }
+  ]
+}
