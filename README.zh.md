@@ -6,7 +6,28 @@
 
 Fashion Harness 把小规模、可归属的研究资料组织为可审核的设计机会、三个差异化概念方向、人工决策、版本化交付物、反馈与评测记录。它服务于需要检查证据和修订历史的服装设计师，不把 AI 描述成可以替代专业判断的自治系统。
 
+**作品状态：** 冻结的本地应用候选已经通过 T-06 构建、typecheck、46 个 Fashion 定向测试文件／284 个测试、全新运行目录启动、HTTP 访问、人工浏览器检查和截图采集；产品限制与仓库限制继续公开披露。
+
+[90 秒阅读路径](#90-second-review-path) · [本地运行](#run) · [验证证据](docs/fashion/validation-and-evidence.zh.md) · [已知限制](#known-limits)
+
+![包含公开案例和本地项目入口的 Fashion Harness 项目优先首页](docs/fashion/assets/screenshots/01-fashion-home.png)
+
 > **独立衍生项目。** 本仓库基于开源 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的 `dsh-v0.1.5-rc.2` 标签／`fb2c4b9e698e30edb738bca4cf0618587db7d203` 提交构建。它不是 DeepSeek 官方项目，与 DeepSeek 不存在合作、背书或隶属关系。详见 [NOTICE.md](NOTICE.md)。
+
+<a id="90-second-review-path"></a>
+
+## 90 秒阅读路径
+
+| 时间 | 查看内容 | 能力证据 |
+| --- | --- | --- |
+| 前 15 秒 | 本页、首页截图和[当前版本实现了什么](#what-this-version-implements) | 产品问题、当前闭环和可见结果 |
+| 45 秒内 | [产品案例](docs/fashion/product-case-study.zh.md)与[架构／归属图](docs/fashion/architecture.zh.md) | 需求判断、领域建模、Harness 边界，以及上游与 Fashion 归属 |
+| 70 秒内 | [开发过程](docs/fashion/development-process.zh.md) | 如何分离产品决策、Cursor 实现、Codex 审计和人工验收 |
+| 90 秒内 | [验证证据](docs/fashion/validation-and-evidence.zh.md)、[截图清单](docs/fashion/assets/screenshots/screenshot-manifest.zh.md)与[已知限制](#known-limits) | 构建／测试／运行证据、诚实的能力边界和后续补强项 |
+
+如果进入面试深度，可继续查看[数据来源](docs/fashion/data-provenance-and-limitations.zh.md)、[学习与迭代](docs/fashion/learning-and-iteration.zh.md)和[路线图](docs/fashion/roadmap-and-boundaries.zh.md)。
+
+<a id="what-this-version-implements"></a>
 
 ## 当前版本实现了什么
 
@@ -83,6 +104,8 @@ Web 服务默认使用 `http://127.0.0.1:3080`。评估仓库时建议使用隔�
 Cursor 根据冻结规格承担主要代码实现和测试编写。Codex 协助资料调查、风险分析、任务拆分、验收设计和独立复核。AI 输出不会自动视为通过：检查失败会进入明确修复，公开表述只覆盖可检查或可复现的事实。
 
 仓库中存在 TypeScript、React、Cordis、Storage 和测试等技术，不代表我独立手写或完全掌握上游每一部分。完整上游 monorepo 为可复现性而保留；Fashion package、profile 装配和公开作品集材料与上游归属的边界见[架构说明](docs/fashion/architecture.zh.md)。
+
+<a id="known-limits"></a>
 
 ## 已知限制
 

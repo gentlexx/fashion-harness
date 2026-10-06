@@ -6,7 +6,28 @@ English | [中文](README.zh.md)
 
 Fashion Harness turns a small, attributable research set into reviewable design opportunities, three differentiated concept directions, human decisions, versioned deliverables, feedback, and evaluation records. It is designed for fashion designers who need evidence and revision history around AI-assisted work—not an autonomous system that replaces professional judgment.
 
+**Portfolio status:** the frozen local application candidate passed T-06 build, typecheck, 46 Fashion-focused test files / 284 tests, fresh-home startup, HTTP access, manual browser inspection, and screenshot capture. Known product and repository limitations remain disclosed.
+
+[90-second review](#90-second-review-path) · [Run locally](#run) · [Validation evidence](docs/fashion/validation-and-evidence.md) · [Known limits](#known-limits)
+
+![Fashion Harness project-first home with the public case and local project entry](docs/fashion/assets/screenshots/01-fashion-home.png)
+
 > **Independent derivative project.** This repository is built on the open-source [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) codebase at tag `dsh-v0.1.5-rc.2` / commit `fb2c4b9e698e30edb738bca4cf0618587db7d203`. It is not an official DeepSeek project and is not endorsed by or affiliated with DeepSeek. See [NOTICE.md](NOTICE.md).
+
+<a id="90-second-review-path"></a>
+
+## 90-second review path
+
+| Time | Inspect | What it demonstrates |
+| --- | --- | --- |
+| First 15 seconds | This page, the screenshot, and [What this version implements](#what-this-version-implements) | The product problem, current workflow, and visible result |
+| By 45 seconds | [Product case](docs/fashion/product-case-study.md) and [architecture / ownership map](docs/fashion/architecture.md) | Requirement judgment, domain modeling, Harness boundaries, and upstream-versus-Fashion ownership |
+| By 70 seconds | [Development process](docs/fashion/development-process.md) | How product decisions, Cursor implementation, Codex audit, and human acceptance were separated |
+| By 90 seconds | [Validation evidence](docs/fashion/validation-and-evidence.md), [screenshot manifest](docs/fashion/assets/screenshots/screenshot-manifest.md), and [known limits](#known-limits) | Build/test/runtime evidence, honest capability boundaries, and what remains to be improved |
+
+For an interview-depth review, continue with [data provenance](docs/fashion/data-provenance-and-limitations.md), [learning and iteration](docs/fashion/learning-and-iteration.md), and the [roadmap](docs/fashion/roadmap-and-boundaries.md).
+
+<a id="what-this-version-implements"></a>
 
 ## What this version implements
 
@@ -82,6 +103,8 @@ I own the product problem, workflow and domain decisions, scope, technical-route
 Cursor performed most code implementation and test-writing from frozen specifications. Codex supported information discovery, risk analysis, task decomposition, acceptance design, and independent review. AI output was not treated as acceptance: failing checks led to explicit repairs, and the public claims are limited to what can be inspected or reproduced.
 
 The presence of TypeScript, React, Cordis, storage, testing, or other technologies in this monorepo is not a claim that I independently authored or fully mastered every part. The large upstream codebase is retained for reproducibility; the Fashion packages, profile integration, and public portfolio documents are separated from upstream ownership in [Architecture](docs/fashion/architecture.md).
+
+<a id="known-limits"></a>
 
 ## Known limits
 
