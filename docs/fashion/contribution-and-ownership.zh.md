@@ -42,6 +42,17 @@
 
 Fashion package 使用私有 `@gentlexx/*` workspace scope。保留的 `@deepseek-ai/*` 表示上游 package 家族，不作为个人作品声明。
 
+下面不是完整文件清单，而是便于技术面试官从业务问题追到实现和验证的代表性切片。表中的“项目所有者参与”描述产品判断、规则定义和验收责任，不等同于声称独立手写对应代码。
+
+| 代表模块 | 解决的问题 | 关键代码与测试 | 项目所有者参与 | 验证方式 |
+| --- | --- | --- | --- | --- |
+| 研究与证据 | 让来源、样本和证据保留可追溯关系，并区分已观察、推导所得和仍待验证的信息 | [Evidence 对象](../../packages/fashion/research/src/schema/v0/evidence.ts)、[Research registry](../../packages/fashion/research/src/registry.ts)、[Research 测试](../../packages/fashion/research/tests/research.spec.ts) | 定义证据链、状态边界、公开资料边界和验收场景 | 定向测试、研究工作台人工浏览，以及[截图 03](assets/screenshots/03-research-evidence.png) |
+| 分析与机会 | 把市场条目和热度信号整理为趋势簇与可确认的设计机会，避免把推断直接写成事实 | [分析记录](../../packages/fashion/analysis/src/schema/v0/records.ts)、[Analysis registry](../../packages/fashion/analysis/src/registry.ts)、[Analysis 测试](../../packages/fashion/analysis/tests/analysis.spec.ts) | 定义分析对象、事实与推断的区分、机会确认规则和验收标准 | 定向测试、Research → Analysis 主链人工检查，以及[截图 04](assets/screenshots/04-analysis-opportunity.png) |
+| 设计、审核与交付 | 固化三个差异化候选方向，由人完成修改、选择与批准，并让交付物绑定获批 revision | [审核对象](../../packages/fashion/design/src/schema/v0/review.ts)、[Design registry](../../packages/fashion/design/src/registry.ts)、[精确输入导出](../../packages/fashion/design/src/export/exact-inputs.ts)、[Design 测试](../../packages/fashion/design/tests/design.spec.ts)、[revision 审核测试](../../packages/fashion/design/tests/review-f302.spec.ts) | 决定“三个候选”、人工批准、revision 有效性、冻结交付和不能自动越过的 gate | 定向测试、候选修改与重新审核人工操作，以及[截图 05](assets/screenshots/05-three-concepts-review.png)和[截图 06](assets/screenshots/06-deliverable-evaluation.png) |
+| Agent 只读上下文 | 给 Agent 提供与当前项目绑定、可检查且不含 Fashion 写工具的上下文，防止绕过人工决策 | [上下文快照](../../packages/fashion/agent/src/snapshot.ts)、[工具边界](../../packages/fashion/agent/src/tools.ts)、[Agent 测试](../../packages/fashion/agent/tests/fashion-agent.spec.ts) | 选择一期只读策略、Session 与 Project 绑定方式及禁止自动写入的边界 | 工具清单和上下文快照测试、项目隔离检查 |
+| 反馈与确定性评测 | 记录设计师反馈和结果可用性；用规则结果形成待人工分诊的改进项，而不是自动改写业务对象 | [Feedback 对象](../../packages/fashion/feedback/src/schema/v0/records.ts)、[评测规则](../../packages/fashion/evaluation/src/rules.ts)、[评测报告](../../packages/fashion/evaluation/src/report.ts)、[Evaluation 测试](../../packages/fashion/evaluation/tests/evaluation.spec.ts) | 定义未知结果的表达、确定性规则、改进项分诊和“没有真实结果时不补写”的边界 | 定向测试、交付与评测页面人工检查，以及[截图 06](assets/screenshots/06-deliverable-evaluation.png) |
+| 应用装配与浏览器主链 | 将领域包、控制器和项目优先 UI 装配为可启动的 Fashion profile | [Fashion Shell](../../packages/client/ui-fashion-shell/src/client)、[Fashion bundle](../../packages/bundle/fashion-app/src/index.ts)、[Bundle 测试](../../packages/bundle/fashion-app/tests/fashion-app.spec.ts) | 拆分端到端任务、规定页面流程和验收标准，复核修复结论与最终公开范围 | 全量构建、typecheck、46 个 Fashion 测试文件／284 个测试、全新 `DSH_HOME` 启动、HTTP 200 和人工浏览器主链；详见[验证与证据](validation-and-evidence.zh.md) |
+
 ## 4. 定向上游集成
 
 Fashion Harness 通过狭窄集成缝接入现有系统，没有把整个 Host 复制为 Fashion 代码：
