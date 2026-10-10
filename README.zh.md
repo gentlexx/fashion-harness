@@ -148,17 +148,26 @@ pnpm dsh --profile fashion
 - **评测运行条件：** 部分 Evaluation 仓库证据依赖可用的 Git checkout。
 - **仓库文档债务：** 全仓 translation-pairing 与 Markdown 链接检查仍因保留的上游文档指向候选包未包含的内部路径而失败；新增 Fashion 公开材料没有产生这些失败。
 
-## 文档导航
+## 深入阅读
 
-- [Fashion 文档索引](docs/fashion/README.zh.md)
-- [产品案例](docs/fashion/product-case-study.zh.md)
-- [架构与归属图](docs/fashion/architecture.zh.md)
-- [贡献与归属地图](docs/fashion/contribution-and-ownership.zh.md)
-- [开发流程与 AI 协作](docs/fashion/development-process.zh.md)
-- [验证与证据](docs/fashion/validation-and-evidence.zh.md)
-- [数据来源与限制](docs/fashion/data-provenance-and-limitations.zh.md)
-- [学习与迭代](docs/fashion/learning-and-iteration.zh.md)
-- [路线图与边界](docs/fashion/roadmap-and-boundaries.zh.md)
+### 产品与系统设计
+
+- [产品案例](docs/fashion/product-case-study.zh.md)：问题定义、目标用户、人工审核与版本化决策。
+- [系统架构](docs/fashion/architecture.zh.md)：领域分层、Harness 边界、关键不变量与长期架构边界。
+
+### 代码、AI 协作与工程验证
+
+- [贡献、归属与关键代码地图](docs/fashion/contribution-and-ownership.zh.md)：代表模块、真实代码路径、上游集成和不作的能力主张。
+- [开发过程与 AI 协作](docs/fashion/development-process.zh.md)：规格、实现、检查、修复和复核如何分工。
+- [验证与证据](docs/fashion/validation-and-evidence.zh.md)：构建、typecheck、定向测试、隔离启动、浏览器检查及仓库保留失败。
+
+### 数据、学习与后续边界
+
+- [数据来源、可追溯性与限制](docs/fashion/data-provenance-and-limitations.zh.md)：R0 数据定位、隐私、凭证和权利边界。
+- [学习与迭代](docs/fashion/learning-and-iteration.zh.md)：当前能力证据、学习边界和反馈进入下一轮的方式。
+- [路线图与能力边界](docs/fashion/roadmap-and-boundaries.zh.md)：当前实现、分阶段路线和暂不作出的主张。
+
+[查看完整 Fashion 文档索引](docs/fashion/README.zh.md)。
 
 ## 许可与归属
 
