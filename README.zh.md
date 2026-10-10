@@ -139,16 +139,14 @@ pnpm dsh --profile fashion
 
 <a id="known-limits"></a>
 
-## 已知限制
+## 当前边界与尚未验证内容
 
-- 部分分析 `subjectRefs`／`memberRefs` 尚未完成全面的对象存在性与项目归属验证。
-- 已有 Brief 创建和确认，但没有完整的产品级 Brief 修订界面。
-- Improvement 候选需要人工分诊，不会自动修复，也不与所有后续上游状态保持强一致。
-- 部分 Evaluation 仓库证据依赖 Git checkout。
-- R0 数据量小、带日期且不具代表性，不是实时市场数据或销量预测。
-- 不声称已经完成完整 Fashion Dataset、生产级 Ontology、服装垂类模型、CAD／Tech Pack 管线或商业效果。
-- 真实设计师可用性和价值属于计划中的 R1；当前没有满意度或效率结果。
-- 全仓 translation-pairing 与 Markdown 链接检查仍因保留的上游文档指向已排除内部路径而失败；新增 Fashion 公开材料没有产生这些失败。
+- **真实用户与商业结果：** 当前没有真实服装设计师试用、满意度、效率提升、销量或商业效果证据；这些内容仍需后续真实用户验证。
+- **数据范围：** R0 公开资料量小、带日期且不具代表性，不是实时市场数据、趋势预测或销量预测。
+- **产品完整度：** 已实现 Brief 创建和确认，但尚无完整的产品级 Brief 修订界面；也未完成完整 Fashion Dataset、生产级 Ontology、服装垂类模型或 CAD／Tech Pack 管线。
+- **对象与状态一致性：** 部分分析引用（`subjectRefs`／`memberRefs`）尚未完成全面的对象存在性与项目归属验证；改进项需要人工分诊，不会自动修复，也不保证与所有后续派生状态保持强一致。
+- **评测运行条件：** 部分 Evaluation 仓库证据依赖可用的 Git checkout。
+- **仓库文档债务：** 全仓 translation-pairing 与 Markdown 链接检查仍因保留的上游文档指向候选包未包含的内部路径而失败；新增 Fashion 公开材料没有产生这些失败。
 
 ## 文档导航
 
