@@ -20,15 +20,15 @@ Fashion Harness 将可追溯的研究资料、品牌与设计约束、三个差�
 
 ## 90 秒阅读路径
 
-| 时间 | 查看内容 | 能力证据 |
-| --- | --- | --- |
-| 前 15 秒 | 留在本页阅读摘要并查看截图 | 产品问题与可见结果 |
-| 35 秒内 | [当前版本实现了什么](#what-this-version-implements) | 当前业务闭环与已验证工程切片 |
-| 55 秒内 | [责任边界与 AI 辅助实现](#ownership-and-ai-assisted-implementation) | 我决定了什么、AI 实现了什么、哪些内容仍归上游所有 |
-| 75 秒内 | [为什么它是 Harness](#why-this-is-a-harness-not-a-chat-demo)与[设计决策](#design-decisions-worth-inspecting) | 系统边界、人工权威、来源、revision 与评测选择 |
-| 90 秒内 | [已知限制](#known-limits)与本页验证摘要 | 展示交付证据，但不把规划或测试包装成夸大的能力声明 |
+不必从头读完整个仓库，可以按招聘环节选择入口：
 
-如果进入面试深度，可继续查看[数据来源](docs/fashion/data-provenance-and-limitations.zh.md)、[学习与迭代](docs/fashion/learning-and-iteration.zh.md)和[路线图](docs/fashion/roadmap-and-boundaries.zh.md)。
+| 读者 | 建议先看 | 可以判断什么 |
+| --- | --- | --- |
+| 中国招聘者／HR | 本页摘要、项目总览图与[当前版本实现](#what-this-version-implements) | 项目解决什么问题、是否形成可见成果、我的角色是否清楚 |
+| 用人经理／产品负责人 | [责任边界与 AI 辅助实现](#ownership-and-ai-assisted-implementation)、[为什么它是 Harness](#why-this-is-a-harness-not-a-chat-demo)与[设计决策](#design-decisions-worth-inspecting) | 我如何拆解垂直场景、设计人机协作流程并承担交付责任 |
+| 技术面试官 | [架构说明](docs/fashion/architecture.zh.md)、[贡献与归属地图](docs/fashion/contribution-and-ownership.zh.md)、[验证证据](docs/fashion/validation-and-evidence.zh.md)、[本地运行](#run)与[已知限制](#known-limits) | 关键实现在哪里、如何测试和复核、哪些结论仍不能证明 |
+
+需要继续了解产品证据时，可查看[数据来源](docs/fashion/data-provenance-and-limitations.zh.md)、[学习与迭代](docs/fashion/learning-and-iteration.zh.md)和[路线图](docs/fashion/roadmap-and-boundaries.zh.md)。
 
 <a id="ownership-and-ai-assisted-implementation"></a>
 
