@@ -6,14 +6,21 @@
 
 Fashion Harness 的长期方向是：
 
-1. **合规服装与趋势信息**（Compliant Fashion & Trend Information）
-2. **数据清洗、标准化与多模态理解**（Cleaning / Standardization / Multimodal Understanding）
-3. **服装数据集与领域本体**（Fashion Dataset / Fashion Ontology）
-4. **趋势分析与设计机会**（Trend Analysis / Design Opportunity）
-5. **Harness 辅助研究与设计决策**（Harness-assisted Research & Design Decision）
-6. **设计师审核、专业工具深化与交付**（Designer Review / Professional-tool Refinement / Delivery）
-7. **设计师反馈、评测与可获得的市场结果**（Designer Feedback / Evaluation / Available Market Outcome）
-8. **进入下一轮模型、规则与工作流改进**（Model / Rule / Workflow Improvement Cycle）
+**合规服装与趋势信息**（Compliant Fashion & Trend Information）<br>
+↓<br>
+**数据清洗、标准化与多模态理解**（Cleaning / Standardization / Multimodal Understanding）<br>
+↓<br>
+**服装数据集与领域本体**（Fashion Dataset / Fashion Ontology）<br>
+↓<br>
+**趋势分析与设计机会**（Trend Analysis / Design Opportunity）<br>
+↓<br>
+**Harness 辅助研究与设计决策**（Harness-assisted Research & Design Decision）<br>
+↓<br>
+**设计师审核、专业工具深化与交付**（Designer Review / Professional-tool Refinement / Delivery）<br>
+↓<br>
+**设计师反馈、评测与可获得的市场结果**（Designer Feedback / Evaluation / Available Market Outcome）<br>
+↓<br>
+**进入下一轮模型、规则与工作流改进**（Model / Rule / Workflow Improvement Cycle）
 
 长期核心资产是 Dataset、Ontology、Harness、设计师反馈和评测体系的组合，而不是单一模型。
 
@@ -21,13 +28,19 @@ Fashion Harness 的长期方向是：
 
 当前仓库只实现长期闭环中的一个可验证切片：
 
-1. **设计需求**（Brief）
-2. **建立小规模可追溯研究集**（Traceable Research Set）
-3. **形成趋势与设计机会**（Trend Cluster / Design Opportunity）
-4. **生成三个差异化设计方向**（Three Design Concepts）
-5. **完成人工审核与版本变更**（Human Review / Revision）
-6. **形成冻结交付快照**（Versioned Deliverable）
-7. **保留反馈与评测记录**（Designer Feedback / Evaluation Record）
+**设计需求**（Brief）<br>
+↓<br>
+**建立小规模可追溯研究集**（Traceable Research Set）<br>
+↓<br>
+**形成趋势与设计机会**（Trend Cluster / Design Opportunity）<br>
+↓<br>
+**生成三个差异化设计方向**（Three Design Concepts）<br>
+↓<br>
+**完成人工审核与版本变更**（Human Review / Revision）<br>
+↓<br>
+**形成冻结交付快照**（Versioned Deliverable）<br>
+↓<br>
+**保留反馈与评测记录**（Designer Feedback / Evaluation Record）
 
 这条切片用于验证产品结构、领域规则、Agent 上下文和交付证据，不代表完整商业产品。
 
