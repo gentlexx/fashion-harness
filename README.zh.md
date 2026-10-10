@@ -10,7 +10,9 @@ Fashion Harness 将可追溯的研究资料、品牌与设计约束、三个差�
 
 [90 秒阅读路径](#90-second-review-path) · [责任边界](#ownership-and-ai-assisted-implementation) · [本地运行](#run) · [验证证据](docs/fashion/validation-and-evidence.zh.md) · [已知限制](#known-limits)
 
-![包含公开案例和本地项目入口的 Fashion Harness 项目优先首页](docs/fashion/assets/screenshots/01-fashion-home.png)
+![Fashion Harness 服装研究、候选方案人工审核与固定评测总览](docs/fashion/assets/fashion-harness-overview.png)
+
+*项目总览：从可追溯研究和设计约束出发，生成三个候选方向，由人完成审核与批准，并保留版本化交付和评测记录。*
 
 > **独立衍生项目。** 本仓库基于开源 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的 `dsh-v0.1.5-rc.2` 标签／`fb2c4b9e698e30edb738bca4cf0618587db7d203` 提交构建。它不是 DeepSeek 官方项目，与 DeepSeek 不存在合作、背书或隶属关系。详见 [NOTICE.md](NOTICE.md)。
 
