@@ -135,6 +135,7 @@ The deterministic Fashion workbench is intended to be browsable without an API k
 - [Data provenance and limitations](docs/fashion/data-provenance-and-limitations.md)
 - [Learning and iteration](docs/fashion/learning-and-iteration.md)
 - [Roadmap and boundaries](docs/fashion/roadmap-and-boundaries.md)
+- [AI application development perspective and personal technical path](docs/fashion/ai-application-development-path.md)
 
 ## License and attribution
 

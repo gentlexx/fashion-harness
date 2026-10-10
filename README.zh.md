@@ -164,8 +164,12 @@ pnpm dsh --profile fashion
 ### 数据、学习与后续边界
 
 - [数据来源、可追溯性与限制](docs/fashion/data-provenance-and-limitations.zh.md)：R0 数据定位、隐私、凭证和权利边界。
-- [学习与迭代](docs/fashion/learning-and-iteration.zh.md)：当前能力证据、学习边界和反馈进入下一轮的方式。
-- [路线图与能力边界](docs/fashion/roadmap-and-boundaries.zh.md)：当前实现、分阶段路线和暂不作出的主张。
+- [学习与迭代](docs/fashion/learning-and-iteration.zh.md)：项目实践、当前个人技术情况和真实反馈进入改进流程的方式。
+- [路线图与项目状态](docs/fashion/roadmap-and-boundaries.zh.md)：当前功能、尚未达到的效果和后续方向。
+
+### 项目背后的个人方法
+
+- [AI 应用开发思考与个人技术路线](docs/fashion/ai-application-development-path.zh.md)：在项目证据基础上，进一步说明我的 AI 应用理解、项目工作方法、当前技术路线和目标岗位。
 
 [查看完整 Fashion 文档索引](docs/fashion/README.zh.md)。
 

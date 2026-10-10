@@ -19,8 +19,9 @@ This directory contains the public product, system, and engineering evidence for
 6. [Data provenance and limitations](data-provenance-and-limitations.md): traceability, compliance, and known boundaries;
 7. [Learning and iteration](learning-and-iteration.md): how project problems map back to a learning path;
 8. [Roadmap and boundaries](roadmap-and-boundaries.md): how the current slice relates to the long-term loop;
-9. [Fictional walkthrough](../../examples/fashion-fictional-walkthrough/README.md): an end-to-end explanation without real client data;
-10. [Screenshot evidence manifest](assets/screenshots/screenshot-manifest.md): six screenshots captured from the frozen application commit, with hashes and scenario boundaries.
+9. [AI application development perspective and personal technical path](ai-application-development-path.md): the owner's method, technical growth path, and target roles, grounded in portfolio evidence;
+10. [Implemented workflow walkthrough with synthetic data](../../examples/fashion-fictional-walkthrough/README.md): the implemented end-to-end workflow using a synthetic team, business context, and values;
+11. [Screenshot evidence manifest](assets/screenshots/screenshot-manifest.md): six screenshots captured from the frozen application commit, with hashes and scenario boundaries.
 
 ## Current public conclusion
 

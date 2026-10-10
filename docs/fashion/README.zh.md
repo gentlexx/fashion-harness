@@ -17,10 +17,11 @@
 4. [开发过程](development-process.zh.md)：从规划到实现、审计和交付的工作方式；
 5. [验证与证据](validation-and-evidence.zh.md)：已经验证什么、还缺什么；
 6. [数据来源与限制](data-provenance-and-limitations.zh.md)：可追溯性、合规和已知边界；
-7. [学习与迭代](learning-and-iteration.zh.md)：如何把项目问题映射回学习路线；
-8. [路线图与能力边界](roadmap-and-boundaries.zh.md)：当前切片与长期闭环的关系；
-9. [虚构演练](../../examples/fashion-fictional-walkthrough/README.zh.md)：不用真实客户数据说明一次端到端流程；
-10. [截图证据清单](assets/screenshots/screenshot-manifest.zh.md)：包含从冻结应用提交采集的六张截图、哈希和场景边界。
+7. [学习与迭代](learning-and-iteration.zh.md)：项目实践、当前个人技术情况和反馈进入改进流程的方式；
+8. [路线图与项目状态](roadmap-and-boundaries.zh.md)：当前功能、尚未达到的效果与后续方向；
+9. [AI 应用开发思考与个人技术路线](ai-application-development-path.zh.md)：在作品证据基础上继续了解项目所有者的方法、技术成长路线与目标岗位；
+10. [已实现流程演示（合成数据）](../../examples/fashion-fictional-walkthrough/README.zh.md)：使用合成团队、业务背景和数值演示已实现的端到端流程；
+11. [截图证据清单](assets/screenshots/screenshot-manifest.zh.md)：包含从冻结应用提交采集的六张截图、哈希和场景边界。
 
 ## 当前公开结论
 
