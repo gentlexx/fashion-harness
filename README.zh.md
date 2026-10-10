@@ -70,6 +70,12 @@ Project
 - 确定性评测规则，以及仍需人工分诊的 Improvement Queue；
 - Fashion profile 已配置为关闭上游通用欢迎流程；首次启动仍会出现 API Key 引导，但可用“稍后配置”关闭，实时模型动作仍依赖用户配置 Provider。
 
+### 代表性成果：三个候选，人工批准
+
+![Fashion Harness 审核轮次中的三个设计候选方向与人工批准结果](docs/fashion/assets/screenshots/05-three-concepts-review.png)
+
+*公开重建案例截图：AI 基于研究证据和设计约束提供三个差异化候选方向，人完成比较、选择与批准。该截图用于演示人机职责，不代表真实设计师或客户批准，也不证明商业效果。*
+
 2026-10-06 已对冻结应用提交 `c1a8010b72764876b17744776d674fefc35d4ea9` 完成独立验证，包括离线冻结锁文件安装、全量构建（252 个客户端产物）、typecheck、46 个 Fashion 定向测试文件／284 个测试、全新 `DSH_HOME` 启动、页面 HTTP 200、人工浏览器主链检查和六张证据截图。全仓 translation-pairing 与 Markdown 链接门禁仍会报告：部分保留的上游文档链接指向候选包主动排除的 `.agents`／`.github` 内容；这是已披露的文档债务，不应被写成 Fashion 运行失败或全仓通过。
 
 <a id="why-this-is-a-harness-not-a-chat-demo"></a>
