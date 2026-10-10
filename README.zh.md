@@ -104,9 +104,11 @@ Cursor 根据冻结规格承担主要 Fashion 代码实现和测试编写。Code
 <a id="run"></a>
 <a id="run-from-source"></a>
 
-## 从源码运行
+## 本地复现（从源码运行）
 
-需要与上游仓库兼容的 Node.js 和 pnpm 版本。
+**环境要求：** Node.js `^22.19.0` 或 `>=24.0.0`，pnpm `11.7.0`。
+
+在仓库根目录执行：
 
 ```sh
 pnpm install --frozen-lockfile
@@ -114,11 +116,15 @@ pnpm run build
 pnpm dsh --profile fashion
 ```
 
-Web 服务默认使用 `http://127.0.0.1:3080`。评估仓库时建议使用隔离的 `DSH_HOME`，避免本机设置、凭据、会话和存储相互影响。
+启动后访问 `http://127.0.0.1:3080`。首次出现 API Key 引导时，可以选择“稍后配置”进入 Fashion 工作台。
 
-确定性的 Fashion 工作台设计为无需 API Key 即可浏览。实时 Agent／模型动作需要通过 Models 设置页或启动环境配置 Provider。不要提交凭据；[`.env.example`](.env.example) 只包含变量名。
+**无需 API Key：** 可以浏览固定的 Fashion 工作台、R0 公开案例，以及已经记录的研究、分析、设计、审核、交付和评测主链。
 
-> 这条运行路径已于 2026-10-06 使用冻结应用提交、离线冻结锁文件安装和全新 `DSH_HOME` 完成独立验证。准确结果与已披露失败见[验证与证据](docs/fashion/validation-and-evidence.zh.md)。
+**需要模型配置：** 实时 Agent／模型动作需要通过 Models 设置页或启动环境配置模型服务（Provider）。不要提交凭据；[`.env.example`](.env.example) 只包含变量名。
+
+评估仓库时建议使用全新、隔离的 `DSH_HOME`，避免本机设置、凭据、会话和存储影响结果。
+
+> 这条运行路径已于 2026-10-06 使用冻结应用提交、离线冻结锁文件安装和全新 `DSH_HOME` 完成独立验证。完整命令、结果与证据边界见[验证与证据](docs/fashion/validation-and-evidence.zh.md)。
 
 <a id="design-decisions-worth-inspecting"></a>
 
