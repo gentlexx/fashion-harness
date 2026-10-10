@@ -34,11 +34,13 @@ Fashion Harness 将可追溯的研究资料、品牌与设计约束、三个差�
 
 ## 责任边界与 AI 辅助实现
 
-我负责产品问题、业务流程和领域决策，决定范围、技术路线、验收标准、任务组织、复核结论和公开边界，并以能够解释、修改、调试和验证为实践目标。
+我负责定义产品问题、业务流程和领域规则，决定项目范围、技术路线、任务规格、验收标准、复核结论和公开边界，并对最终交付负责。
 
-Cursor 根据冻结规格承担主要代码实现和测试编写。Codex 协助资料调查、风险分析、任务拆分、验收设计和独立复核。AI 输出不会自动视为通过：检查失败会进入明确修复，公开表述只覆盖可检查或可复现的事实。
+我的工程实践包括阅读上游 monorepo 与 Fashion 模块结构，检查关键代码、数据流和 AI 生成的代码差异；运行 Node.js／pnpm 构建、typecheck、定向测试和本地服务；根据日志、错误、测试结果及人工浏览器操作提出修复要求，并完成回归验证。
 
-仓库中存在 TypeScript、React、Cordis、Storage 和测试等技术，不代表我独立手写或完全掌握上游每一部分。完整上游 monorepo 为可复现性而保留；Fashion package、profile 装配和公开作品集材料与上游归属的边界见[架构说明](docs/fashion/architecture.zh.md)和[贡献与归属地图](docs/fashion/contribution-and-ownership.zh.md)。
+Cursor 根据冻结规格承担主要 Fashion 代码实现和测试编写。Codex 协助资料调查、风险分析、任务拆分、验收设计、公开表述校正和独立复核。AI 输出不会自动视为通过：检查失败会进入明确修复，公开表述只覆盖可检查或可复现的事实。
+
+仓库中出现 TypeScript、React、Cordis、Storage 和测试等技术，不代表所有代码均由我独立手写，也不代表我已经完全掌握上游每一部分。完整上游 monorepo 为可复现性而保留；Fashion package、profile 装配和公开作品集材料与上游归属的边界见[架构说明](docs/fashion/architecture.zh.md)和[贡献与归属地图](docs/fashion/contribution-and-ownership.zh.md)。
 
 <a id="what-this-version-implements"></a>
 
