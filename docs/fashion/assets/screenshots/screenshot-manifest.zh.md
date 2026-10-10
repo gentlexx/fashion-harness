@@ -19,14 +19,16 @@
 
 ## 证据索引
 
+点击文件名可查看对应的原始运行截图。
+
 | 文件 | 可见场景与边界 | 尺寸 | SHA-256 |
 | --- | --- | --- | --- |
-| `01-fashion-home.png` | Fashion profile 首页、独立 Fashion Harness 标识、公开案例入口与本地项目入口。 | 1330×1292 | `5c06ad7cf79cbc3470947de333a49cf45474d9a7adb48b16acb8a7a86ec965fa` |
-| `02-project-brief.png` | 本地项目概览与流程阶段，同时暴露当前边界：创建项目只填写名称，尚无完整 Brief 修订界面。 | 1330×1292 | `775394d64af00325ea6cab0d3f6e2c3923d5728630d10f7de047a442bd4fee5d` |
-| `03-research-evidence.png` | Research Task 及 Source、Sample、Evidence、审核状态和追溯关系；公开使用前尚未完整复核所链接来源的存在性与归属。 | 1330×1292 | `d03accb2285d2ef4ab8382cecb51393702174a21c2be88c000033d83a7e6b2e0` |
-| `04-analysis-opportunity.png` | 结构化市场条目、信号、趋势聚类与设计机会；内容是固定演示案例，不是实时市场情报。 | 1330×1292 | `1faec5128ac4783b8821b862e54b59ea5402095dfa666b2d89ad5ad638fc0b58` |
-| `05-three-concepts-review.png` | 三个设计方向、人工审核与选定方向；Improvement 候选不保证所有派生记录之间的强一致。 | 1330×1292 | `0094a67b3bface683e1d55a34c2911155d2aa3aa4e027f40c1e9f2a720e3469a` |
-| `06-deliverable-evaluation.png` | 交付物与固定评估视图；它不是真实设计师验证或商业证据，评估验证依赖 Git 检出。 | 1330×1292 | `2071c3769ba1fd59a83ca6e737d93ee16c65e3ac4cf0ca322da5e51f46c27c8a` |
+| [`01-fashion-home.png`](01-fashion-home.png) | Fashion profile 首页、独立 Fashion Harness 标识、公开案例入口与本地项目入口。 | 1330×1292 | `5c06ad7cf79cbc3470947de333a49cf45474d9a7adb48b16acb8a7a86ec965fa` |
+| [`02-project-brief.png`](02-project-brief.png) | 本地项目概览与流程阶段，同时暴露当前边界：创建项目只填写名称，尚无完整 Brief 修订界面。 | 1330×1292 | `775394d64af00325ea6cab0d3f6e2c3923d5728630d10f7de047a442bd4fee5d` |
+| [`03-research-evidence.png`](03-research-evidence.png) | Research Task 及 Source、Sample、Evidence、审核状态和追溯关系；公开使用前尚未完整复核所链接来源的存在性与归属。 | 1330×1292 | `d03accb2285d2ef4ab8382cecb51393702174a21c2be88c000033d83a7e6b2e0` |
+| [`04-analysis-opportunity.png`](04-analysis-opportunity.png) | 结构化市场条目、信号、趋势聚类与设计机会；内容是固定演示案例，不是实时市场情报。 | 1330×1292 | `1faec5128ac4783b8821b862e54b59ea5402095dfa666b2d89ad5ad638fc0b58` |
+| [`05-three-concepts-review.png`](05-three-concepts-review.png) | 三个设计方向、人工审核与选定方向；Improvement 候选不保证所有派生记录之间的强一致。 | 1330×1292 | `0094a67b3bface683e1d55a34c2911155d2aa3aa4e027f40c1e9f2a720e3469a` |
+| [`06-deliverable-evaluation.png`](06-deliverable-evaluation.png) | 交付物与固定评估视图；它不是真实设计师验证或商业证据，评估验证依赖 Git 检出。 | 1330×1292 | `2071c3769ba1fd59a83ca6e737d93ee16c65e3ac4cf0ca322da5e51f46c27c8a` |
 
 ## 解读边界
 
