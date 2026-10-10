@@ -46,29 +46,26 @@ Cursor 根据冻结规格承担主要 Fashion 代码实现和测试编写。Code
 
 ## 当前版本实现了什么
 
-本地公开候选包含一条确定性、由人工治理的工作流：
+当前公开候选实现了一条可追溯、由人工治理的服装研究与设计决策流程。中文业务动作在前，括号中的英文名称对应代码和存储中的真实对象：
 
-```text
-Project
-→ ResearchTask → Source → Sample → Evidence
-→ MarketItem / PopularitySignal / TrendCluster → DesignOpportunity
-→ DesignOpportunityBrief → ConceptSet → three DesignConcepts
-→ ReviewRound / ReviewDecision
-→ versioned DesignDeliverable
-→ DesignerFeedback / OutcomeAvailability
-→ EvaluationRun / RuleResult / ImprovementItem
-```
+1. **建立设计项目**（`Project`）。
+2. **收集研究来源并形成可追溯证据**（`ResearchTask → Source → Sample → Evidence`）。
+3. **分析市场信号并确认设计机会**（`MarketItem / PopularitySignal / TrendCluster → DesignOpportunity`）。
+4. **固化设计要求并形成三个候选方向**（`DesignOpportunityBrief → ConceptSet → DesignConcept`）。
+5. **由人完成比较、选择与批准**（`ReviewRound → ReviewDecision`）。
+6. **保存版本化交付物，并记录反馈与结果可用性**（`DesignDeliverable → DesignerFeedback → OutcomeAvailability`）。
+7. **执行规则评测，再由人处理改进项**（`EvaluationRun → RuleResult → ImprovementItem`）。
 
 同时包括：
 
-- Fashion 专用 profile 与项目优先的浏览器工作台；
-- 项目域存储、revision 检查、只读 R0 和跨项目保护；
-- 区分 `observed`、`derived`、`needs_validation` 的证据状态；
+- Fashion 专用运行配置（`fashion` profile）与项目优先的浏览器工作台；
+- 项目隔离存储、版本冲突检查（revision check）、只读 R0 公开案例和跨项目保护；
+- 将证据区分为“已观察”（`observed`）、“推导所得”（`derived`）和“仍待验证”（`needs_validation`）；
 - 只能由人工完成的机会选择、审核、批准与反馈决策；
 - 带内容哈希和受众过滤的冻结交付快照；
-- 将一个 Session 绑定到一个 Project、且不提供 Fashion 写工具的只读 Agent 上下文；
-- 确定性评测规则，以及仍需人工分诊的 Improvement Queue；
-- Fashion profile 已配置为关闭上游通用欢迎流程；首次启动仍会出现 API Key 引导，但可用“稍后配置”关闭，实时模型动作仍依赖用户配置 Provider。
+- 将一次对话会话（`Session`）绑定到一个设计项目（`Project`），并只向 Agent 提供不含 Fashion 写工具的只读项目上下文；
+- 确定性评测规则，以及仍需人工分诊的改进队列（`Improvement Queue`）；
+- Fashion 运行配置已关闭上游通用欢迎流程；首次启动仍会出现 API Key 引导，但可用“稍后配置”关闭，实时模型动作仍依赖用户配置模型服务（Provider）。
 
 ### 代表性成果：三个候选，人工批准
 
