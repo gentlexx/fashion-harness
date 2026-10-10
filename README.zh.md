@@ -24,8 +24,8 @@ Fashion Harness 将可追溯的研究资料、品牌与设计约束、三个差�
 
 | 读者 | 建议先看 | 可以判断什么 |
 | --- | --- | --- |
-| 中国招聘者／HR | 本页摘要、项目总览图与[当前版本实现](#what-this-version-implements) | 项目解决什么问题、是否形成可见成果、我的角色是否清楚 |
-| 用人经理／产品负责人 | [责任边界与 AI 辅助实现](#ownership-and-ai-assisted-implementation)、[为什么它是 Harness](#why-this-is-a-harness-not-a-chat-demo)与[设计决策](#design-decisions-worth-inspecting) | 我如何拆解垂直场景、设计人机协作流程并承担交付责任 |
+| 招聘者 | 本页摘要、项目总览图与[当前版本实现](#what-this-version-implements) | 项目解决什么问题、是否形成可见成果、我的角色是否清楚 |
+| 用人经理 | [责任边界与 AI 辅助实现](#ownership-and-ai-assisted-implementation)、[为什么它是 Harness](#why-this-is-a-harness-not-a-chat-demo)与[设计决策](#design-decisions-worth-inspecting) | 我如何拆解垂直场景、设计人机协作流程并承担交付责任 |
 | 技术面试官 | [架构说明](docs/fashion/architecture.zh.md)、[贡献与归属地图](docs/fashion/contribution-and-ownership.zh.md)、[验证证据](docs/fashion/validation-and-evidence.zh.md)、[本地运行](#run)与[已知限制](#known-limits) | 关键实现在哪里、如何测试和复核、哪些结论仍不能证明 |
 
 需要继续了解产品证据时，可查看[数据来源](docs/fashion/data-provenance-and-limitations.zh.md)、[学习与迭代](docs/fashion/learning-and-iteration.zh.md)和[路线图](docs/fashion/roadmap-and-boundaries.zh.md)。
